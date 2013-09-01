@@ -1,0 +1,16 @@
+keysize: 2048
+
+OPENSTACK.identity_url: 'https://identity.api.rackspacecloud.com/v2.0/tokens'
+OPENSTACK.compute_name: cloudServersOpenStack
+OPENSTACK.compute_region: LON
+OPENSTACK.tenant: {{ pillar['rackspace_tenant']}}
+OPENSTACK.user: {{ pillar['rackspace_user']}}
+OPENSTACK.password: {{ pillar['rackspace_apikey']}}
+OPENSTACK.protocol: ipv4
+
+log_file: /var/log/salt/cloud
+log_level: info
+log_level_logfile: info
+
+minion:
+    master: {{ pillar['saltmaster']}}

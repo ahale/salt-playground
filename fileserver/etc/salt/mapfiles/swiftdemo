@@ -1,0 +1,21 @@
+openstack_512:
+{%- for n in range(pillar['swiftdemo_proxies']) %}
+    - proxy{{ n + 1 }}.{{ pillar['swiftdemo_domain'] }}:
+        grains:
+            cluster: {{ pillar['swiftdemo_domain'] }}
+            stype: proxy
+{%- endfor -%}
+{%- for zone in range(pillar['swiftdemo_zones']) -%}
+    {%- for node in range(pillar['swiftdemo_nodes_per_zone']) %}
+    - storage{{ node + 1 }}-Z{{ zone + 1 }}.{{ pillar['swiftdemo_domain'] }}:
+        grains:
+            cluster: {{ pillar['swiftdemo_domain'] }}
+            stype: storage
+    {%- endfor -%}
+{%- endfor -%}
+{%- for n in range(pillar['swiftdemo_services']) %}
+    - services{{ n + 1 }}.{{ pillar['swiftdemo_domain'] }}:
+        grains:
+            cluster: {{ pillar['swiftdemo_domain'] }}
+            stype: services
+{%- endfor -%}

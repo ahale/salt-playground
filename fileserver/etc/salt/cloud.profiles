@@ -1,0 +1,5 @@
+openstack_512:
+    provider: openstack
+    size: 512MB Standard Instance
+    image: Ubuntu 12.04 LTS (Precise Pangolin)
+    ssh_interface: private_ips
