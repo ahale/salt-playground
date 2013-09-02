@@ -1,27 +1,34 @@
 include:
   - core
 
-/etc/swift/:
+/etc/swift:
   file.directory:
     - makedirs: True
     - owner: swift
     - group: swift
     - mode: 755
+    - require:
+      - pkg: swiftpkgs
 
 /etc/swift/swift.conf:
   file.managed:
     - source: salt://etc/swift/swift.conf
     - mode: 644
     - template: jinja
+    - require: 
+      - file: /etc/swift
 
 /var/run/swift:
   file.directory:
     - makedirs: True
     - mode: 777
+    - require: 
+      - pkg: swiftpkgs
 
 swiftpkgs:
   pkg.installed:
-    - order: 3
+    - require:
+        - pkg: corepkgs
     - skip_verify: True
     - pkgs:
         - python-greenlet

@@ -3,7 +3,7 @@ include:
 
 corepkgs:
   pkg.installed:
-    - order: 2
+    - order: 1
     - skip_verify: True
     - pkgs:
         - ubuntu-cloud-keyring

@@ -1,6 +1,5 @@
 iptables-persistent:
   pkg.installed:
-    - order: 1
     - name: iptables-persistent
   file.managed:
     - name: /etc/iptables/rules.v4
