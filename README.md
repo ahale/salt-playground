@@ -10,6 +10,7 @@ First build a server to work from and clone the repo then configure the salt-mas
     root@admin1:~# apt-get install git
     root@admin1:~# git clone https://github.com/ahale/salt-playground.git /srv/salt
     root@admin1:~# vi /srv/salt/pillar/cloud/init.sls
+    root@admin1:~# vi /srv/salt/pillar/cluster/init.sls
     root@admin1:~# /srv/salt/playground/.setup/master.sh
     root@admin1:~# salt-key -L
     Accepted Keys:
