@@ -1,0 +1,4581 @@
+Last login: Mon Sep  2 13:20:32 on ttys017
+
+andrew.hale@ahale-mb ~ 
+andrew.hale@ahale-mb ~ 
+andrew.hale@ahale-mb ~ 
+andrew.hale@ahale-mb ~ ssh 162.13.93.104 -l root
+The authenticity of host '162.13.93.104 (162.13.93.104)' can't be established.
+RSA key fingerprint is 65:d4:7d:a7:be:6e:cd:c8:03:42:7a:08:de:2f:94:ae.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '162.13.93.104' (RSA) to the list of known hosts.
+root@162.13.93.104's password: 
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-49-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Sep  2 12:40:14 UTC 2013
+
+  System load:  0.26              Processes:           62
+  Usage of /:   4.4% of 19.68GB   Users logged in:     0
+  Memory usage: 8%                IP address for eth0: 162.13.93.104
+  Swap usage:   0%                IP address for eth1: 10.179.201.144
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@admin1:~# 
+root@admin1:~# apt-get install git
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  git-man liberror-perl
+Suggested packages:
+  git-daemon-run git-daemon-sysvinit git-doc git-el git-arch git-cvs git-svn git-email git-gui gitk gitweb
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6,741 kB of archives.
+After this operation, 15.2 MB of additional disk space will be used.
+Do you want to continue [Y/n]? Y
+Get:1 http://mirror.rackspace.com/ubuntu/ precise/main liberror-perl all 0.17-1 [23.8 kB]
+Get:2 http://mirror.rackspace.com/ubuntu/ precise/main git-man all 1:1.7.9.5-1 [630 kB]
+Get:3 http://mirror.rackspace.com/ubuntu/ precise/main git amd64 1:1.7.9.5-1 [6,087 kB]
+Fetched 6,741 kB in 12s (536 kB/s)                                                                                                                           
+Selecting previously unselected package liberror-perl.
+(Reading database ... 47657 files and directories currently installed.)
+Unpacking liberror-perl (from .../liberror-perl_0.17-1_all.deb) ...
+Selecting previously unselected package git-man.
+Unpacking git-man (from .../git-man_1%3a1.7.9.5-1_all.deb) ...
+Selecting previously unselected package git.
+Unpacking git (from .../git_1%3a1.7.9.5-1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up liberror-perl (0.17-1) ...
+Setting up git-man (1:1.7.9.5-1) ...
+Setting up git (1:1.7.9.5-1) ...
+root@admin1:~# 
+root@admin1:~# git clone https://github.com/ahale/salt-playground.git /srv/salt
+Cloning into '/srv/salt'...
+remote: Counting objects: 122, done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 122 (delta 27), reused 113 (delta 21)
+Receiving objects: 100% (122/122), 20.96 KiB, done.
+Resolving deltas: 100% (27/27), done.
+root@admin1:~# vi /srv/salt/pillar/cloud/init.sls
+root@admin1:~# vi /srv/salt/pillar/cluster/init.sls 
+root@admin1:~# 
+root@admin1:~# /srv/salt/playground/.setup/master.sh
+Hit http://mirror.rackspace.com precise Release.gpg
+Get:1 http://mirror.rackspace.com precise-updates Release.gpg [198 B]
+Get:2 http://mirror.rackspace.com precise-backports Release.gpg [198 B]
+Get:3 http://mirror.rackspace.com precise-security Release.gpg [198 B]
+Hit http://mirror.rackspace.com precise Release
+Get:4 http://mirror.rackspace.com precise-updates Release [49.6 kB]             
+Get:5 http://mirror.rackspace.com precise-backports Release [49.6 kB]              
+Get:6 http://mirror.rackspace.com precise-security Release [49.6 kB]
+Hit http://mirror.rackspace.com precise/main Sources      
+Hit http://mirror.rackspace.com precise/restricted Sources
+Hit http://mirror.rackspace.com precise/universe Sources  
+Hit http://mirror.rackspace.com precise/multiverse Sources
+Hit http://mirror.rackspace.com precise/main amd64 Packages
+Hit http://mirror.rackspace.com precise/restricted amd64 Packages
+Hit http://mirror.rackspace.com precise/universe amd64 Packages
+Hit http://mirror.rackspace.com precise/multiverse amd64 Packages
+Hit http://mirror.rackspace.com precise/main i386 Packages
+Hit http://mirror.rackspace.com precise/restricted i386 Packages
+Hit http://mirror.rackspace.com precise/universe i386 Packages
+Hit http://mirror.rackspace.com precise/multiverse i386 Packages
+Hit http://mirror.rackspace.com precise/main TranslationIndex
+Hit http://mirror.rackspace.com precise/multiverse TranslationIndex
+Hit http://mirror.rackspace.com precise/restricted TranslationIndex
+Hit http://mirror.rackspace.com precise/universe TranslationIndex
+Get:7 http://mirror.rackspace.com precise-updates/main Sources [415 kB]
+Get:8 http://mirror.rackspace.com precise-updates/restricted Sources [7,031 B]                                                                               
+Get:9 http://mirror.rackspace.com precise-updates/universe Sources [94.6 kB]                                                                                 
+Get:10 http://mirror.rackspace.com precise-updates/multiverse Sources [8,358 B]                                                                              
+Get:11 http://mirror.rackspace.com precise-updates/main amd64 Packages [678 kB]                                                                              
+Get:12 http://mirror.rackspace.com precise-updates/restricted amd64 Packages [11.5 kB]                                                                       
+Get:13 http://mirror.rackspace.com precise-updates/universe amd64 Packages [212 kB]                                                                          
+Get:14 http://mirror.rackspace.com precise-updates/multiverse amd64 Packages [13.8 kB]                                                                       
+Get:15 http://mirror.rackspace.com precise-updates/main i386 Packages [699 kB]                                                                               
+Get:16 http://mirror.rackspace.com precise-updates/restricted i386 Packages [11.4 kB]                                                                        
+Get:17 http://mirror.rackspace.com precise-updates/universe i386 Packages [216 kB]                                                                           
+Get:18 http://mirror.rackspace.com precise-updates/multiverse i386 Packages [14.0 kB]                                                                        
+Get:19 http://mirror.rackspace.com precise-updates/main TranslationIndex [3,564 B]                                                                           
+Get:20 http://mirror.rackspace.com precise-updates/multiverse TranslationIndex [2,605 B]                                                                     
+Get:21 http://mirror.rackspace.com precise-updates/restricted TranslationIndex [2,461 B]                                                                     
+Get:22 http://mirror.rackspace.com precise-updates/universe TranslationIndex [2,850 B]                                                                       
+Get:23 http://mirror.rackspace.com precise-backports/main Sources [2,935 B]                                                                                  
+Get:24 http://mirror.rackspace.com precise-backports/restricted Sources [14 B]                                                                               
+Get:25 http://mirror.rackspace.com precise-backports/universe Sources [35.2 kB]                                                                              
+Get:26 http://mirror.rackspace.com precise-backports/multiverse Sources [5,311 B]                                                                            
+Get:27 http://mirror.rackspace.com precise-backports/main amd64 Packages [2,378 B]                                                                           
+Get:28 http://mirror.rackspace.com precise-backports/restricted amd64 Packages [14 B]                                                                        
+Get:29 http://mirror.rackspace.com precise-backports/universe amd64 Packages [36.2 kB]                                                                       
+Get:30 http://mirror.rackspace.com precise-backports/multiverse amd64 Packages [5,206 B]                                                                     
+Get:31 http://mirror.rackspace.com precise-backports/main i386 Packages [2,390 B]                                                                            
+Get:32 http://mirror.rackspace.com precise-backports/restricted i386 Packages [14 B]                                                                         
+Get:33 http://mirror.rackspace.com precise-backports/universe i386 Packages [36.1 kB]                                                                        
+Get:34 http://mirror.rackspace.com precise-backports/multiverse i386 Packages [5,178 B]                                                                      
+Get:35 http://mirror.rackspace.com precise-backports/main TranslationIndex [72 B]                                                                            
+Get:36 http://mirror.rackspace.com precise-backports/multiverse TranslationIndex [72 B]                                                                      
+Get:37 http://mirror.rackspace.com precise-backports/restricted TranslationIndex [70 B]                                                                      
+Get:38 http://mirror.rackspace.com precise-backports/universe TranslationIndex [73 B]                                                                        
+Get:39 http://mirror.rackspace.com precise-security/main Sources [85.1 kB]                                                                                   
+Get:40 http://mirror.rackspace.com precise-security/restricted Sources [2,494 B]                                                                             
+Get:41 http://mirror.rackspace.com precise-security/universe Sources [28.0 kB]                                                                               
+Get:42 http://mirror.rackspace.com precise-security/multiverse Sources [1,803 B]                                                                             
+Get:43 http://mirror.rackspace.com precise-security/main amd64 Packages [309 kB]                                                                             
+Get:44 http://mirror.rackspace.com precise-security/restricted amd64 Packages [4,627 B]                                                                      
+Get:45 http://mirror.rackspace.com precise-security/universe amd64 Packages [80.9 kB]                                                                        
+Get:46 http://mirror.rackspace.com precise-security/multiverse amd64 Packages [2,442 B]                                                                      
+Get:47 http://mirror.rackspace.com precise-security/main i386 Packages [325 kB]                                                                              
+Get:48 http://mirror.rackspace.com precise-security/restricted i386 Packages [4,620 B]                                                                       
+Get:49 http://mirror.rackspace.com precise-security/universe i386 Packages [84.1 kB]                                                                         
+Get:50 http://mirror.rackspace.com precise-security/multiverse i386 Packages [2,633 B]                                                                       
+Get:51 http://mirror.rackspace.com precise-security/main TranslationIndex [74 B]                                                                             
+Get:52 http://mirror.rackspace.com precise-security/multiverse TranslationIndex [72 B]                                                                       
+Get:53 http://mirror.rackspace.com precise-security/restricted TranslationIndex [72 B]                                                                       
+Get:54 http://mirror.rackspace.com precise-security/universe TranslationIndex [73 B]                                                                         
+Hit http://mirror.rackspace.com precise/main Translation-en                                                                                                  
+Hit http://mirror.rackspace.com precise/multiverse Translation-en                                                                                            
+Hit http://mirror.rackspace.com precise/restricted Translation-en                                                                                            
+Hit http://mirror.rackspace.com precise/universe Translation-en                                                                                              
+Get:55 http://mirror.rackspace.com precise-updates/main Translation-en [307 kB]                                                                              
+Get:56 http://mirror.rackspace.com precise-updates/multiverse Translation-en [8,064 B]                                                                       
+Get:57 http://mirror.rackspace.com precise-updates/restricted Translation-en [2,637 B]                                                                       
+Get:58 http://mirror.rackspace.com precise-updates/universe Translation-en [125 kB]                                                                          
+Hit http://mirror.rackspace.com precise-backports/main Translation-en                                                                                        
+Get:59 http://mirror.rackspace.com precise-backports/multiverse Translation-en [4,610 B]                                                                     
+Hit http://mirror.rackspace.com precise-backports/restricted Translation-en                                                                                  
+Get:60 http://mirror.rackspace.com precise-backports/universe Translation-en [26.5 kB]                                                                       
+Get:61 http://mirror.rackspace.com precise-security/main Translation-en [149 kB]                                                                             
+Get:62 http://mirror.rackspace.com precise-security/multiverse Translation-en [1,299 B]                                                                      
+Hit http://mirror.rackspace.com precise-security/restricted Translation-en                                                                                   
+Get:63 http://mirror.rackspace.com precise-security/universe Translation-en [51.8 kB]                                                                        
+Fetched 4,279 kB in 26s (162 kB/s)                                                                                                                           
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  python-pycurl unattended-upgrades
+Suggested packages:
+  libcurl4-gnutls-dev python-pycurl-dbg bsd-mailx
+The following NEW packages will be installed:
+  python-pycurl python-software-properties unattended-upgrades
+0 upgraded, 3 newly installed, 0 to remove and 38 not upgraded.
+Need to get 96.1 kB of archives.
+After this operation, 645 kB of additional disk space will be used.
+Get:1 http://mirror.rackspace.com/ubuntu/ precise-updates/main unattended-upgrades all 0.76ubuntu1 [24.7 kB]
+Get:2 http://mirror.rackspace.com/ubuntu/ precise/main python-pycurl amd64 7.19.0-4ubuntu3 [49.2 kB]
+Get:3 http://mirror.rackspace.com/ubuntu/ precise-updates/main python-software-properties all 0.82.7.3 [22.3 kB]
+Fetched 96.1 kB in 0s (96.3 kB/s)                
+Preconfiguring packages ...
+Selecting previously unselected package unattended-upgrades.
+(Reading database ... 48306 files and directories currently installed.)
+Unpacking unattended-upgrades (from .../unattended-upgrades_0.76ubuntu1_all.deb) ...
+Selecting previously unselected package python-pycurl.
+Unpacking python-pycurl (from .../python-pycurl_7.19.0-4ubuntu3_amd64.deb) ...
+Selecting previously unselected package python-software-properties.
+Unpacking python-software-properties (from .../python-software-properties_0.82.7.3_all.deb) ...
+Processing triggers for man-db ...
+Processing triggers for ureadahead ...
+ureadahead will be reprofiled on next reboot
+Setting up unattended-upgrades (0.76ubuntu1) ...
+Setting up python-pycurl (7.19.0-4ubuntu3) ...
+Setting up python-software-properties (0.82.7.3) ...
+You are about to add the following PPA to your system:
+ Salt, the remote execution and configuration management tool.
+ More info: https://launchpad.net/~saltstack/+archive/salt
+Press [ENTER] to continue or ctrl-c to cancel adding it
+
+gpg: keyring `/tmp/tmpADLsy8/secring.gpg' created
+gpg: keyring `/tmp/tmpADLsy8/pubring.gpg' created
+gpg: requesting key 0E27C0A6 from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmpADLsy8/trustdb.gpg: trustdb created
+gpg: key 0E27C0A6: public key "Launchpad PPA for Salt Stack" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK
+Get:1 http://ppa.launchpad.net precise Release.gpg [316 B]
+Get:2 http://ppa.launchpad.net precise Release [11.9 kB] 
+Get:3 http://ppa.launchpad.net precise/main Sources [3,090 B]                            
+Get:4 http://ppa.launchpad.net precise/main amd64 Packages [5,195 B]                                  
+Get:5 http://ppa.launchpad.net precise/main i386 Packages [5,206 B]                                   
+Ign http://ppa.launchpad.net precise/main TranslationIndex                                                      
+Ign http://ppa.launchpad.net precise/main Translation-en_US                                                     
+Ign http://ppa.launchpad.net precise/main Translation-en  
+Hit http://mirror.rackspace.com precise Release.gpg       
+Hit http://mirror.rackspace.com precise-updates Release.gpg
+Hit http://mirror.rackspace.com precise-backports Release.gpg
+Hit http://mirror.rackspace.com precise-security Release.gpg
+Hit http://mirror.rackspace.com precise Release           
+Hit http://mirror.rackspace.com precise-updates Release   
+Hit http://mirror.rackspace.com precise-backports Release                        
+Hit http://mirror.rackspace.com precise-security Release                         
+Hit http://mirror.rackspace.com precise/main Sources                             
+Hit http://mirror.rackspace.com precise/restricted Sources
+Hit http://mirror.rackspace.com precise/universe Sources  
+Hit http://mirror.rackspace.com precise/multiverse Sources
+Hit http://mirror.rackspace.com precise/main amd64 Packages
+Hit http://mirror.rackspace.com precise/restricted amd64 Packages
+Hit http://mirror.rackspace.com precise/universe amd64 Packages
+Hit http://mirror.rackspace.com precise/multiverse amd64 Packages
+Hit http://mirror.rackspace.com precise/main i386 Packages
+Hit http://mirror.rackspace.com precise/restricted i386 Packages
+Hit http://mirror.rackspace.com precise/universe i386 Packages
+Hit http://mirror.rackspace.com precise/multiverse i386 Packages
+Hit http://mirror.rackspace.com precise/main TranslationIndex
+Hit http://mirror.rackspace.com precise/multiverse TranslationIndex
+Hit http://mirror.rackspace.com precise/restricted TranslationIndex
+Hit http://mirror.rackspace.com precise/universe TranslationIndex
+Hit http://mirror.rackspace.com precise-updates/main Sources
+Hit http://mirror.rackspace.com precise-updates/restricted Sources
+Hit http://mirror.rackspace.com precise-updates/universe Sources
+Hit http://mirror.rackspace.com precise-updates/multiverse Sources
+Hit http://mirror.rackspace.com precise-updates/main amd64 Packages
+Hit http://mirror.rackspace.com precise-updates/restricted amd64 Packages
+Hit http://mirror.rackspace.com precise-updates/universe amd64 Packages                                                                                      
+Hit http://mirror.rackspace.com precise-updates/multiverse amd64 Packages                                                                                    
+Hit http://mirror.rackspace.com precise-updates/main i386 Packages                                                                                           
+Hit http://mirror.rackspace.com precise-updates/restricted i386 Packages                                                                                     
+Hit http://mirror.rackspace.com precise-updates/universe i386 Packages                                                                                       
+Hit http://mirror.rackspace.com precise-updates/multiverse i386 Packages                                                                                     
+Hit http://mirror.rackspace.com precise-updates/main TranslationIndex                                                                                        
+Hit http://mirror.rackspace.com precise-updates/multiverse TranslationIndex                                                                                  
+Hit http://mirror.rackspace.com precise-updates/restricted TranslationIndex                                                                                  
+Hit http://mirror.rackspace.com precise-updates/universe TranslationIndex                                                                                    
+Hit http://mirror.rackspace.com precise-backports/main Sources                                                                                               
+Hit http://mirror.rackspace.com precise-backports/restricted Sources                                                                                         
+Hit http://mirror.rackspace.com precise-backports/universe Sources                                                                                           
+Hit http://mirror.rackspace.com precise-backports/multiverse Sources                                                                                         
+Hit http://mirror.rackspace.com precise-backports/main amd64 Packages                                                                                        
+Hit http://mirror.rackspace.com precise-backports/restricted amd64 Packages                                                                                  
+Hit http://mirror.rackspace.com precise-backports/universe amd64 Packages                                                                                    
+Hit http://mirror.rackspace.com precise-backports/multiverse amd64 Packages                                                                                  
+Hit http://mirror.rackspace.com precise-backports/main i386 Packages                                                                                         
+Hit http://mirror.rackspace.com precise-backports/restricted i386 Packages                                                                                   
+Hit http://mirror.rackspace.com precise-backports/universe i386 Packages                                                                                     
+Hit http://mirror.rackspace.com precise-backports/multiverse i386 Packages                                                                                   
+Hit http://mirror.rackspace.com precise-backports/main TranslationIndex                                                                                      
+Hit http://mirror.rackspace.com precise-backports/multiverse TranslationIndex                                                                                
+Hit http://mirror.rackspace.com precise-backports/restricted TranslationIndex                                                                                
+Hit http://mirror.rackspace.com precise-backports/universe TranslationIndex                                                                                  
+Hit http://mirror.rackspace.com precise-security/main Sources                                                                                                
+Hit http://mirror.rackspace.com precise-security/restricted Sources                                                                                          
+Hit http://mirror.rackspace.com precise-security/universe Sources                                                                                            
+Hit http://mirror.rackspace.com precise-security/multiverse Sources                                                                                          
+Hit http://mirror.rackspace.com precise-security/main amd64 Packages                                                                                         
+Hit http://mirror.rackspace.com precise-security/restricted amd64 Packages                                                                                   
+Hit http://mirror.rackspace.com precise-security/universe amd64 Packages
+Hit http://mirror.rackspace.com precise-security/multiverse amd64 Packages
+Hit http://mirror.rackspace.com precise-security/main i386 Packages
+Hit http://mirror.rackspace.com precise-security/restricted i386 Packages
+Hit http://mirror.rackspace.com precise-security/universe i386 Packages
+Hit http://mirror.rackspace.com precise-security/multiverse i386 Packages
+Hit http://mirror.rackspace.com precise-security/main TranslationIndex
+Hit http://mirror.rackspace.com precise-security/multiverse TranslationIndex
+Hit http://mirror.rackspace.com precise-security/restricted TranslationIndex
+Hit http://mirror.rackspace.com precise-security/universe TranslationIndex
+Hit http://mirror.rackspace.com precise/main Translation-en
+Hit http://mirror.rackspace.com precise/multiverse Translation-en
+Hit http://mirror.rackspace.com precise/restricted Translation-en
+Hit http://mirror.rackspace.com precise/universe Translation-en
+Hit http://mirror.rackspace.com precise-updates/main Translation-en
+Hit http://mirror.rackspace.com precise-updates/multiverse Translation-en
+Hit http://mirror.rackspace.com precise-updates/restricted Translation-en
+Hit http://mirror.rackspace.com precise-updates/universe Translation-en
+Hit http://mirror.rackspace.com precise-backports/main Translation-en
+Hit http://mirror.rackspace.com precise-backports/multiverse Translation-en
+Hit http://mirror.rackspace.com precise-backports/restricted Translation-en
+Hit http://mirror.rackspace.com precise-backports/universe Translation-en
+Hit http://mirror.rackspace.com precise-security/main Translation-en
+Hit http://mirror.rackspace.com precise-security/multiverse Translation-en
+Hit http://mirror.rackspace.com precise-security/restricted Translation-en
+Hit http://mirror.rackspace.com precise-security/universe Translation-en
+Fetched 25.7 kB in 17s (1,472 B/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  dctrl-tools debconf-utils libyaml-0-2 msgpack-python python-jinja2 python-libcloud python-m2crypto python-markupsafe python-support python-yaml python-zmq
+  salt-common sshpass
+Suggested packages:
+  debtags python-jinja2-doc python-botocore
+The following NEW packages will be installed:
+  dctrl-tools debconf-utils libyaml-0-2 msgpack-python python-jinja2 python-libcloud python-m2crypto python-markupsafe python-support python-yaml python-zmq
+  salt-cloud salt-common salt-master salt-minion sshpass
+0 upgraded, 16 newly installed, 0 to remove and 38 not upgraded.
+Need to get 2,691 kB of archives.
+After this operation, 12.1 MB of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main python-zmq amd64 13.0.0-2precise [373 kB]
+Get:2 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main salt-common all 0.16.3-1precise [961 kB]
+Get:3 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main salt-master all 0.16.3-1precise [22.0 kB]
+Get:4 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main salt-minion all 0.16.3-1precise [17.0 kB]
+Get:5 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main python-libcloud all 0.12.1-1precise [478 kB]
+Get:6 http://ppa.launchpad.net/saltstack/salt/ubuntu/ precise/main salt-cloud all 0.8.9-1precise [127 kB]
+Get:7 http://mirror.rackspace.com/ubuntu/ precise/main libyaml-0-2 amd64 0.1.4-2 [56.9 kB]
+Get:8 http://mirror.rackspace.com/ubuntu/ precise/main python-m2crypto amd64 0.21.1-2ubuntu2 [157 kB]
+Get:9 http://mirror.rackspace.com/ubuntu/ precise/universe python-support all 1.0.14ubuntu2 [26.1 kB]
+Get:10 http://mirror.rackspace.com/ubuntu/ precise/main python-markupsafe amd64 0.15-1 [13.6 kB]
+Get:11 http://mirror.rackspace.com/ubuntu/ precise/main python-jinja2 amd64 2.6-1 [158 kB]
+Get:12 http://mirror.rackspace.com/ubuntu/ precise/main python-yaml amd64 3.10-2 [122 kB]
+Get:13 http://mirror.rackspace.com/ubuntu/ precise/main dctrl-tools amd64 2.18ubuntu1 [83.5 kB]
+Get:14 http://mirror.rackspace.com/ubuntu/ precise/universe msgpack-python amd64 0.1.10-1 [29.0 kB]
+Get:15 http://mirror.rackspace.com/ubuntu/ precise/main debconf-utils all 1.5.42ubuntu1 [54.9 kB]
+Get:16 http://mirror.rackspace.com/ubuntu/ precise/universe sshpass amd64 1.05-1 [10.5 kB]
+Fetched 2,691 kB in 4s (608 kB/s)
+Selecting previously unselected package libyaml-0-2.
+(Reading database ... 48377 files and directories currently installed.)
+Unpacking libyaml-0-2 (from .../libyaml-0-2_0.1.4-2_amd64.deb) ...
+Selecting previously unselected package python-m2crypto.
+Unpacking python-m2crypto (from .../python-m2crypto_0.21.1-2ubuntu2_amd64.deb) ...
+Selecting previously unselected package python-support.
+Unpacking python-support (from .../python-support_1.0.14ubuntu2_all.deb) ...
+Selecting previously unselected package python-markupsafe.
+Unpacking python-markupsafe (from .../python-markupsafe_0.15-1_amd64.deb) ...
+Selecting previously unselected package python-jinja2.
+Unpacking python-jinja2 (from .../python-jinja2_2.6-1_amd64.deb) ...
+Selecting previously unselected package python-yaml.
+Unpacking python-yaml (from .../python-yaml_3.10-2_amd64.deb) ...
+Selecting previously unselected package python-zmq.
+Unpacking python-zmq (from .../python-zmq_13.0.0-2precise_amd64.deb) ...
+Selecting previously unselected package dctrl-tools.
+Unpacking dctrl-tools (from .../dctrl-tools_2.18ubuntu1_amd64.deb) ...
+Selecting previously unselected package msgpack-python.
+Unpacking msgpack-python (from .../msgpack-python_0.1.10-1_amd64.deb) ...
+Selecting previously unselected package salt-common.
+Unpacking salt-common (from .../salt-common_0.16.3-1precise_all.deb) ...
+Processing triggers for man-db ...
+Processing triggers for ufw ...
+Setting up python-support (1.0.14ubuntu2) ...
+Setting up python-markupsafe (0.15-1) ...
+Setting up python-jinja2 (2.6-1) ...
+Setting up python-m2crypto (0.21.1-2ubuntu2) ...
+Setting up libyaml-0-2 (0.1.4-2) ...
+Setting up python-yaml (3.10-2) ...
+Setting up python-zmq (13.0.0-2precise) ...
+Setting up dctrl-tools (2.18ubuntu1) ...
+Setting up msgpack-python (0.1.10-1) ...
+Setting up salt-common (0.16.3-1precise) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Processing triggers for python-support ...
+Selecting previously unselected package salt-master.
+(Reading database ... 49251 files and directories currently installed.)
+Unpacking salt-master (from .../salt-master_0.16.3-1precise_all.deb) ...
+Selecting previously unselected package salt-minion.
+Unpacking salt-minion (from .../salt-minion_0.16.3-1precise_all.deb) ...
+Selecting previously unselected package debconf-utils.
+Unpacking debconf-utils (from .../debconf-utils_1.5.42ubuntu1_all.deb) ...
+Selecting previously unselected package python-libcloud.
+Unpacking python-libcloud (from .../python-libcloud_0.12.1-1precise_all.deb) ...
+Selecting previously unselected package sshpass.
+Unpacking sshpass (from .../sshpass_1.05-1_amd64.deb) ...
+Selecting previously unselected package salt-cloud.
+Unpacking salt-cloud (from .../salt-cloud_0.8.9-1precise_all.deb) ...
+Processing triggers for ureadahead ...
+Processing triggers for man-db ...
+Setting up salt-master (0.16.3-1precise) ...
+salt-master start/running, process 3676
+Setting up salt-minion (0.16.3-1precise) ...
+salt-minion start/running, process 3707
+Setting up debconf-utils (1.5.42ubuntu1) ...
+Setting up python-libcloud (0.12.1-1precise) ...
+Setting up sshpass (1.05-1) ...
+Setting up salt-cloud (0.8.9-1precise) ...
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+utility, e.g. service salt-master restart
+
+Since the script you are attempting to invoke has been converted to an
+Upstart job, you may also use the stop(8) and then start(8) utilities,
+e.g. stop salt-master ; start salt-master. The restart(8) utility is also available.
+salt-master stop/waiting
+salt-master start/running, process 3736
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+utility, e.g. service salt-minion restart
+
+Since the script you are attempting to invoke has been converted to an
+Upstart job, you may also use the stop(8) and then start(8) utilities,
+e.g. stop salt-minion ; start salt-minion. The restart(8) utility is also available.
+salt-minion stop/waiting
+salt-minion start/running, process 3750
+root@admin1:~# 
+root@admin1:~# salt-key -L
+Accepted Keys:
+Unaccepted Keys:
+admin1
+Rejected Keys:
+root@admin1:~# salt-key -a admin1
+The following keys are going to be accepted:
+Unaccepted Keys:
+admin1
+Proceed? [n/Y] Y
+Key for minion admin1 accepted.
+root@admin1:~# 
+root@admin1:~# salt '*' state.highstate
+admin1:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, python-dev. The following packages were already installed: parted, curl, git-core.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - file
+    Name:      /etc/salt/cloud.profiles
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/salt/cloud.profiles updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/salt/cloud
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/salt/cloud updated
+        Changes:   diff: --- 
++++ 
+@@ -1,143 +1,16 @@
+-# This file should normally be installed at: /etc/salt/cloud 
++keysize: 2048
+ 
++OPENSTACK.identity_url: 'https://identity.api.rackspacecloud.com/v2.0/tokens'
++OPENSTACK.compute_name: cloudServersOpenStack
++OPENSTACK.compute_region: LON
++OPENSTACK.tenant: XXXXXXXXXXX
++OPENSTACK.user: XXXXXXXXXXXXX
++OPENSTACK.password: XXXXXXXXX
++OPENSTACK.protocol: ipv4
+ 
+-##########################################
+-#####          VM Defaults           #####
+-##########################################
++log_file: /var/log/salt/cloud
++log_level: info
++log_level_logfile: info
+ 
+-# Set the size of minion keys to generate, defaults to 2048
+-#
+-#keysize: 2048
+-
+-
+-# Set the default os being deployed. This sets which deployment script to
+-# apply. This argument is optional.
+-#
+-#script: bootstrap-salt
+-
+-
+-##########################################
+-#####    Cloud Provider Settings     #####
+-##########################################
+-
+-# For HP Cloud
+-#OPENSTACK.identity_url: 'https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/'
+-#OPENSTACK.compute_name: Compute
+-#OPENSTACK.compute_region: 'az-1.region-a.geo-1'
+-#OPENSTACK.tenant: myuser-tenant1
+-#OPENSTACK.user: myuser
+-#OPENSTACK.ssh_key_name: mykey
+-#OPENSTACK.ssh_key_file: '/etc/salt/hpcloud/mykey.pem'
+-#OPENSTACK.password: mypass
+-
+-
+-# For Rackspace
+-#OPENSTACK.identity_url: 'https://identity.api.rackspacecloud.com/v2.0/tokens'
+-#OPENSTACK.compute_name: cloudServersOpenStack
+-#OPENSTACK.compute_region: DFW
+-#OPENSTACK.tenant: 5555555
+-#OPENSTACK.user: myuser
+-#OPENSTACK.password: mypass
+-#OPENSTACK.protocol: ipv4
+-
+-
+-# Amazon AWS Accepts these options:
+-#AWS.id: LSKDJGHSDLGKJLSDFKGJ
+-#AWS.key: 'sildghsldkghsroegijenovdfnzlkgh'
+-#AWS.keyname: default
+-#AWS.securitygroup: default
+-#AWS.private_key: /root/test.pem
+-# Specify whether to use public or private IP for deploy script
+-# private_ips or public_ips
+-#AWS.ssh_interface: public_ips
+-
+-
+-# Linode takes the single api_key
+-#LINODE.apikey: <Linode api key>
+-#LINODE.password: F00BarBaz
+-
+-
+-# GoGrid uses a generated apikey and shared secret
+-#GOGRID.apikey: wef98rfweirugh
+-#GOGRID.sharedsecret: saltybacon
+-
+-
+-# Joyent config
+-#JOYENT.user: foobar
+-#JOYENT.password: zaphod77
+-#JOYENT.private_key: /root/joyent.pem
+-
+-
+-# IBM Smart Cloud Enterprise
+-#IBMSCE.user: myuser@mycorp.com
+-#IBMSCE.password: mypass
+-#IBMSCE.ssh_key_name: mykey
+-#IBMSCE.ssh_key_file: '/etc/salt/ibm/mykey.pem'
+-#IBMSCE.location: Raleigh
+-
+-
+-##########################################
+-#####         Logging Settings       #####
+-##########################################
+-
+-# The location of the master log file
+-#
+-#log_file: /var/log/salt/cloud
+-
+-
+-# The level of messages to send to the console.
+-# One of 'garbage', 'trace', 'debug', info', 'warning', 'error', 'critical'.
+-#
+-# Default: 'info'
+-#
+-#log_level: info
+-
+-
+-# The level of messages to send to the log file.
+-# One of 'garbage', 'trace', 'debug', info', 'warning', 'error', 'critical'.
+-#
+-# Default: 'info'
+-#
+-#log_level_logfile: info
+-
+-
+-# The date and time format used in log messages. Allowed date/time formating
+-# can be seen here:
+-#
+-#	http://docs.python.org/library/time.html#time.strftime
+-#
+-#log_datefmt: '%Y-%m-%d %H:%M:%S'
+-
+-
+-# The format of the console logging messages. Allowed formatting options can
+-# be seen here:
+-#
+-#	http://docs.python.org/library/logging.html#logrecord-attributes
+-#
+-#log_fmt_console: '[%(levelname)-8s] %(message)s'
+-#log_fmt_logfile: '%(asctime)s,%(msecs)03.0f [%(name)-17s][%(levelname)-8s] %(message)s'
+-
+-
+-# Logger levels can be used to tweak specific loggers logging levels.
+-# For example, if you want to have the salt library at the 'warning' level,
+-# but you still wish to have 'salt.modules' at the 'debug' level:
+-#
+-#   log_granular_levels:
+-#     'salt': 'warning',
+-#     'salt.modules': 'debug'
+-#     'saltcloud': 'info'
+-#
+-#log_granular_levels: {}
+-
+-
+-##########################################
+-#####         Misc Defaults          #####
+-##########################################
+-
+-# Whether or not to remove the accompnaying SSH key from the known_hosts file
+-# when an instance is destroyed.
+-#
+-# Default: 'False'
+-#
+-#delete_sshkeys: False
+-
++minion:
++    master: 10.179.201.144
+
+                   mode: 600
+                   
+----------
+    State: - file
+    Name:      /etc/salt/mapfiles/swiftdemo
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/salt/mapfiles/swiftdemo updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      salt-cloud
+    Function:  installed
+        Result:    True
+        Comment:   Package salt-cloud is already installed
+        Changes:   
+root@admin1:~# 
+root@admin1:~# 
+root@admin1:~# 
+root@admin1:~# salt-cloud -m /etc/salt/mapfiles/swiftdemo -P
+[WARNING ] The function 'cloud_config()' defined in '/usr/lib/python2.7/dist-packages/saltcloud/config.py' is not yet using the new 'default_path' argument to `salt.config.load_config()`. As such, the 'SALT_CLOUD_CONFIG' environment variable will be ignored
+[WARNING ] The function 'vm_profiles_config()' defined in '/usr/lib/python2.7/dist-packages/saltcloud/config.py' is not yet using the new 'default_path' argument to `salt.config.load_config()`. As such, the 'SALT_CLOUDVM_CONFIG' environment variable will be ignored
+[INFO    ] salt-cloud starting
+[INFO    ] Applying map from '/etc/salt/mapfiles/swiftdemo'.
+The following virtual machines are set to be created:
+  storage1-Z4.demo
+  storage1-Z3.demo
+  storage1-Z2.demo
+  storage1-Z1.demo
+  services1.demo
+  proxy1.demo
+
+Proceed? [N/y] y
+... proceeding
+[INFO    ] Since parallel deployment is in use, ssh console output is disabled. All ssh output will be logged though
+[INFO    ] Creating Cloud VM storage1-Z3.demo
+[INFO    ] Creating Cloud VM proxy1.demo
+[INFO    ] Creating Cloud VM storage1-Z4.demo
+[INFO    ] Creating Cloud VM services1.demo
+[INFO    ] Creating Cloud VM storage1-Z1.demo
+[INFO    ] Creating Cloud VM storage1-Z2.demo
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 date'
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 date'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpTHmgAw root@10.179.194.22:/tmp/minion.pem'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpWQtaBI root@10.179.197.236:/tmp/minion.pem'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpizpPwT root@10.179.194.22:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpISTYo_ root@10.179.197.236:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpniWqCo root@10.179.194.22:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpdqoNxf root@10.179.197.236:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmp3TRl7D root@10.179.194.22:/tmp/deploy.sh'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmp8WYTIu root@10.179.197.236:/tmp/deploy.sh'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 date'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 date'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpNAMxFu root@10.179.202.138:/tmp/minion.pem'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpLEp3De root@10.179.202.30:/tmp/minion.pem'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpVbzWss root@10.179.202.138:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpKbehpH root@10.179.202.30:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpJ1CTPE root@10.179.202.138:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpE4PX7Q root@10.179.202.30:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpp7rLnr root@10.179.202.138:/tmp/deploy.sh'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpROGuHG root@10.179.202.30:/tmp/deploy.sh'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 date'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpOkceVE root@10.179.198.249:/tmp/minion.pem'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpzieYwq root@10.179.198.249:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpkhx8a4 root@10.179.198.249:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmporvRCI root@10.179.198.249:/tmp/deploy.sh'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Rendering deploy script: /usr/lib/python2.7/dist-packages/saltcloud/deploy/bootstrap-salt.sh
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 date'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpAE2i9I root@10.179.197.3:/tmp/minion.pem'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'chmod 600 /tmp/minion.pem'"
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpYa7uK7 root@10.179.197.3:/tmp/minion.pub'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpoIjuOB root@10.179.197.3:/tmp/minion'
+[INFO    ] Running command 'sshpass -p XXXXXXXXXXXX scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none /tmp/tmpslNhdu root@10.179.197.3:/tmp/deploy.sh'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'chmod +x /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 '/tmp/deploy.sh -c /tmp/'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'rm /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.194.22 'rm /tmp/minion'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'rm /tmp/deploy.sh'"
+[INFO    ] Salt installed on proxy1.demo
+[INFO    ] Created Cloud VM 'proxy1.demo'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.236 'rm /tmp/minion'"
+[INFO    ] Salt installed on storage1-Z3.demo
+[INFO    ] Created Cloud VM 'storage1-Z3.demo'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'rm /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'rm /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.138 'rm /tmp/minion'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.202.30 'rm /tmp/minion'"
+[INFO    ] Salt installed on storage1-Z4.demo
+[INFO    ] Created Cloud VM 'storage1-Z4.demo'
+[INFO    ] Salt installed on storage1-Z1.demo
+[INFO    ] Created Cloud VM 'storage1-Z1.demo'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'rm /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.198.249 'rm /tmp/minion'"
+[INFO    ] Salt installed on services1.demo
+[INFO    ] Created Cloud VM 'services1.demo'
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'rm /tmp/deploy.sh'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'rm /tmp/minion.pub'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'rm /tmp/minion.pem'"
+[INFO    ] Running command "sshpass -p XXXXXXXXXXXX ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none root@10.179.197.3 'rm /tmp/minion'"
+[INFO    ] Salt installed on storage1-Z2.demo
+[INFO    ] Created Cloud VM 'storage1-Z2.demo'
+proxy1.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x2342ed0>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/21901f9a-b22a-43fd-b533-0cfcab6774fe
+    id:
+        21901f9a-b22a-43fd-b533-0cfcab6774fe
+    image:
+        None
+    name:
+        proxy1.demo
+    private_ips:
+        - 10.179.194.22
+    public_ips:
+    size:
+        None
+    state:
+        3
+services1.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x2342e10>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/97a4ac14-fda7-463f-ab7d-493b5a90b732
+    id:
+        97a4ac14-fda7-463f-ab7d-493b5a90b732
+    image:
+        None
+    name:
+        services1.demo
+    private_ips:
+        - 10.179.198.249
+    public_ips:
+    size:
+        None
+    state:
+        3
+storage1-Z1.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x2342d50>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/13c24ca0-2cc0-4fdd-b617-757695a8eb87
+    id:
+        13c24ca0-2cc0-4fdd-b617-757695a8eb87
+    image:
+        None
+    name:
+        storage1-Z1.demo
+    private_ips:
+        - 10.179.202.30
+    public_ips:
+    size:
+        None
+    state:
+        3
+storage1-Z2.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x233dc90>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/17647a56-6805-4c13-bf09-fe26d7d455a1
+    id:
+        17647a56-6805-4c13-bf09-fe26d7d455a1
+    image:
+        None
+    name:
+        storage1-Z2.demo
+    private_ips:
+        - 10.179.197.3
+    public_ips:
+    size:
+        None
+    state:
+        3
+storage1-Z3.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x233dbd0>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/02cb7ec9-8144-4390-959e-fadcc9607475
+    id:
+        02cb7ec9-8144-4390-959e-fadcc9607475
+    image:
+        None
+    name:
+        storage1-Z3.demo
+    private_ips:
+        - 10.179.197.236
+    public_ips:
+    size:
+        None
+    state:
+        3
+storage1-Z4.demo:
+    ----------
+    _uuid:
+        None
+    driver:
+        <libcloud.compute.drivers.openstack.OpenStack_1_1_NodeDriver object at 0x233db10>
+    extra:
+        ----------
+        created:
+            2013-09-02T12:53:58Z
+        flavorId:
+            2
+        hostId:
+            
+        imageId:
+            23b564c9-c3e6-49f9-bc68-86c7a9ab5018
+        key_name:
+            None
+        metadata:
+            ----------
+        password:
+            XXXXXXXXXXXX
+        tenantId:
+            XXXXXXXX
+        updated:
+            2013-09-02T12:53:58Z
+        uri:
+            https://lon.servers.api.rackspacecloud.com/v2/XXXXXXXX/servers/ee06a741-74df-4afe-8c2e-c144a60f7adb
+    id:
+        ee06a741-74df-4afe-8c2e-c144a60f7adb
+    image:
+        None
+    name:
+        storage1-Z4.demo
+    private_ips:
+        - 10.179.202.138
+    public_ips:
+    size:
+        None
+    state:
+        3
+
+root@admin1:~#
+root@admin1:~# salt -G 'cluster:demo' test.ping
+storage1-Z3.demo:
+    True
+proxy1.demo:
+    True
+services1.demo:
+    True
+storage1-Z2.demo:
+    True
+storage1-Z4.demo:
+    True
+storage1-Z1.demo:
+    True
+root@admin1:~# salt '*' saltutil.sync_all
+storage1-Z3.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+proxy1.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+services1.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+storage1-Z1.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+storage1-Z2.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+storage1-Z4.demo:
+    ----------
+    grains:
+    modules:
+        - modules.firewall
+        - modules.swiftutils
+    outputters:
+    renderers:
+    returners:
+    states:
+        - states.loopbackdisk
+admin1:
+    ----------
+    grains:
+    modules:
+    outputters:
+    renderers:
+    returners:
+    states:
+root@admin1:~# salt -G 'cluster:demo' state.sls firewall
+storage1-Z1.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:56 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:56 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+services1.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:56 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:56 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+proxy1.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:56 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:56 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+storage1-Z3.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:57 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:57 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+storage1-Z4.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:57 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:57 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+storage1-Z2.demo:
+----------
+    State: - pkg
+    Name:      iptables-persistent
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: iptables-persistent.
+        Changes:   iptables-persistent: { new : 0.5.3ubuntu2
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/iptables/rules.v4
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/iptables/rules.v4 updated
+        Changes:   diff: --- 
++++ 
+@@ -1,7 +1,35 @@
+-# Generated by iptables-save v1.4.12 on Mon Sep  2 13:02:58 2013
+-*filter
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*mangle
++:PREROUTING ACCEPT [0:0]
+ :INPUT ACCEPT [0:0]
+ :FORWARD ACCEPT [0:0]
+ :OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
+ COMMIT
+-# Completed on Mon Sep  2 13:02:58 2013
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*nat
++:PREROUTING ACCEPT [0:0]
++:INPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [0:0]
++:POSTROUTING ACCEPT [0:0]
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
++# Generated by iptables-save v1.4.12 on Fri Aug 30 07:45:10 2013
++*filter
++:INPUT DROP [0:0]
++:FORWARD DROP [0:0]
++:OUTPUT ACCEPT [0:0]
++-A INPUT -s 127.0.0.1/32 -i lo -j ACCEPT
++-A INPUT -s 10.179.202.138 -j ACCEPT
++-A INPUT -s 10.179.197.236 -j ACCEPT
++-A INPUT -s 10.179.201.144 -j ACCEPT
++-A INPUT -s 10.179.197.3 -j ACCEPT
++-A INPUT -s 10.179.202.30 -j ACCEPT
++-A INPUT -s 10.179.198.249 -j ACCEPT
++-A INPUT -s 10.179.194.22 -j ACCEPT
++-A INPUT -p tcp -m state --state NEW -m multiport --dports 22 -j ACCEPT
++-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
++-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
++COMMIT
++# Completed on Fri Aug 30 07:45:10 2013
+
+                   
+----------
+    State: - service
+    Name:      iptables-persistent
+    Function:  running
+        Result:    True
+        Comment:   Service restarted
+        Changes:   iptables-persistent: True
+                   
+root@admin1:~# 
+root@admin1:~# 
+root@admin1:~# salt -G 'cluster:demo' state.highstate
+storage1-Z1.demo:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, git-core, python-dev. The following packages were already installed: parted, curl.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   git-man: { new : 1:1.7.9.5-1
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   git-completion: { new : 1
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   git: { new : 1:1.7.9.5-1
+old : 
+}
+                   liberror-perl: { new : 0.17-1
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   git-core: { new : 1:1.7.9.5-1
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - git
+    Name:      https://github.com/pandemicsyn/swift-ring-master.git
+    Function:  latest
+        Result:    True
+        Comment:   Repository https://github.com/pandemicsyn/swift-ring-master.git cloned to /usr/src/swift-ring-master
+        Changes:   new: https://github.com/pandemicsyn/swift-ring-master.git
+                   revision: 3744e5dc74c798d232432cbd93de772770068654
+                   
+----------
+    State: - cmd
+    Name:      python setup.py install
+    Function:  wait
+        Result:    True
+        Comment:   Command "python setup.py install" run
+        Changes:   pid: 10496
+                   retcode: 0
+                   stderr: zip_safe flag not set; analyzing archive contents...
+/tmp/easy_install-pk2GCe/greenlet-0.4.1/temp/tmpMq48YQ/simple.c:1:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+greenlet.c: In function 'g_switch':
+greenlet.c:593:5: warning: 'err' may be used uninitialized in this function [-Wuninitialized]
+                   stdout: running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating swift_ring_master.egg-info
+writing requirements to swift_ring_master.egg-info/requires.txt
+writing swift_ring_master.egg-info/PKG-INFO
+writing top-level names to swift_ring_master.egg-info/top_level.txt
+writing dependency_links to swift_ring_master.egg-info/dependency_links.txt
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+reading manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterd.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterwsgi.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/__init__.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringminion.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/utils.py -> build/lib.linux-x86_64-2.7/srm
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterd.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterwsgi.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/__init__.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringminion.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/utils.py -> build/bdist.linux-x86_64/egg/srm
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterd.py to ringmasterd.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterwsgi.py to ringmasterwsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringminion.py to ringminion.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/utils.py to utils.pyc
+installing package data to build/bdist.linux-x86_64/egg
+running install_data
+creating build/bdist.linux-x86_64/egg/share
+creating build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying README.md -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-master.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-minion.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-wsgi-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-minion -> /etc/init.d
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/swift-target-weight -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-wsgi-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-minion-server -> build/scripts-2.7
+changing mode of build/scripts-2.7/swift-target-weight from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-wsgi-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-minion-server from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-wsgi-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-minion-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-target-weight -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-wsgi-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-minion-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-target-weight to 755
+copying swift_ring_master.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/swift_ring_master-0.1.17-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing swift_ring_master-0.1.17-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Extracting swift_ring_master-0.1.17-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding swift-ring-master 0.1.17 to easy-install.pth file
+Installing swift-ring-master-server script to /usr/local/bin
+Installing swift-ring-master-wsgi-server script to /usr/local/bin
+Installing swift-ring-minion-server script to /usr/local/bin
+Installing swift-target-weight script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Processing dependencies for swift-ring-master==0.1.17
+Searching for eventlet
+Reading http://pypi.python.org/simple/eventlet/
+Reading http://eventlet.net
+Reading http://wiki.secondlife.com/wiki/Eventlet
+Best match: eventlet 0.13.0
+Downloading https://pypi.python.org/packages/source/e/eventlet/eventlet-0.13.0.tar.gz#md5=104fb01f488b1e7e4382aa87336b0b69
+Processing eventlet-0.13.0.tar.gz
+Running eventlet-0.13.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-cMPoQk/eventlet-0.13.0/egg-dist-tmp-1wBkSe
+Adding eventlet 0.13.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/eventlet-0.13.0-py2.7.egg
+Searching for greenlet>=0.3
+Reading http://pypi.python.org/simple/greenlet/
+Best match: greenlet 0.4.1
+Downloading https://pypi.python.org/packages/source/g/greenlet/greenlet-0.4.1.zip#md5=c2deda75bdda59c38cae12a77cc53adc
+Processing greenlet-0.4.1.zip
+Running greenlet-0.4.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-pk2GCe/greenlet-0.4.1/egg-dist-tmp-lX42wW
+Adding greenlet 0.4.1 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-x86_64.egg
+Finished processing dependencies for swift-ring-master==0.1.17
+                   
+----------
+    State: - file
+    Name:      /etc/default/rsync
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/default/rsync updated
+        Changes:   diff: --- 
++++ 
+@@ -1,41 +1,3 @@
+-# defaults file for rsync daemon mode
+-
+-# start rsync in daemon mode from init.d script?
+-#  only allowed values are "true", "false", and "inetd"
+-#  Use "inetd" if you want to start the rsyncd from inetd,
+-#  all this does is prevent the init.d script from printing a message
+-#  about not starting rsyncd (you still need to modify inetd's config yourself).
+-RSYNC_ENABLE=false
+-
+-# which file should be used as the configuration file for rsync.
+-# This file is used instead of the default /etc/rsyncd.conf
+-# Warning: This option has no effect if the daemon is accessed
+-#          using a remote shell. When using a different file for
+-#          rsync you might want to symlink /etc/rsyncd.conf to
+-#          that file.
+-# RSYNC_CONFIG_FILE=
+-
+-# what extra options to give rsync --daemon?
+-#  that excludes the --daemon; that's always done in the init.d script
+-#  Possibilities are:
+-#   --address=123.45.67.89   (bind to a specific IP address)
+-#   --port=8730        (bind to specified port; default 873)
++RSYNC_ENABLE=true
+ RSYNC_OPTS=''
+-
+-# run rsyncd at a nice level?
+-#  the rsync daemon can impact performance due to much I/O and CPU usage,
+-#  so you may want to run it at a nicer priority than the default priority.
+-#  Allowed values are 0 - 19 inclusive; 10 is a reasonable value.
+ RSYNC_NICE=''
+-
+-# run rsyncd with ionice?
+-#  "ionice" does for IO load what "nice" does for CPU load.
+-#  As rsync is often used for backups which aren't all that time-critical,
+-#  reducing the rsync IO priority will benefit the rest of the system.
+-#  See the manpage for ionice for allowed options.
+-#  -c3 is recommended, this will run rsync IO at "idle" priority. Uncomment
+-#  the next line to activate this.
+-# RSYNC_IONICE='-c3'
+-
+-# Don't forget to create an appropriate config file,
+-# else the daemon will not start.
+
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-minion
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-minion updated
+        Changes:   diff: --- 
++++ 
+@@ -17,16 +17,16 @@
+ case "$1" in
+     start)
+         echo "Starting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     stop)
+         echo "Stopping swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
+         ;;
+     restart)
+         echo "Restarting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     *)
+         echo "Usage: /etc/init.d/swift-ring-minion {start|stop|restart}"
+
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/rsyncd.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/rsyncd.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/account-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/account-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/container-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/container-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/object-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/object-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/ring-minion.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/ring-minion.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      swiftpkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-greenlet, swift-doc=1.9.0-0ubuntu1~cloud0, python-eventlet, python-swift=1.9.0-0ubuntu1~cloud0, swift=1.9.0-0ubuntu1~cloud0, python-swiftclient=1:1.5.0-0ubuntu1~cloud0.
+        Changes:   python-pyxattr: { new : 1
+old : 
+}
+                   python-swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   libjs-underscore: { new : 1.1.6-1ubuntu2
+old : 
+}
+                   python-xattr: { new : 0.6.2-1ubuntu1
+old : 
+}
+                   python-eventlet: { new : 0.13.0-0ubuntu1~cloud0
+old : 
+}
+                   python-d2to1: { new : 0.2.10-1ubuntu4~cloud0
+old : 
+}
+                   python-paste: { new : 1.7.5.1-4ubuntu2
+old : 
+}
+                   python-oslo.config: { new : 1:1.2.0a3-1ubuntu1~cloud0
+old : 
+}
+                   python-formencode: { new : 1.2.4-2ubuntu2
+old : 
+}
+                   python-pbr: { new : 0.5.16-4~cloud0
+old : 
+}
+                   python-six: { new : 1.1.0-2
+old : 
+}
+                   python-netifaces: { new : 0.6-2ubuntu1
+old : 
+}
+                   python-scgi: { new : 1.13-1ubuntu1
+old : 
+}
+                   libjs-sphinxdoc: { new : 1.1.3+dfsg-2ubuntu2.1
+old : 
+}
+                   python-pastescript: { new : 1.7.5-1
+old : 
+}
+                   python2.7-scgi: { new : 1
+old : 
+}
+                   python-swiftclient: { new : 1:1.5.0-0ubuntu1~cloud0
+old : 
+}
+                   python2.7-netifaces: { new : 1
+old : 
+}
+                   python-keystoneclient: { new : 1:0.3.1-0ubuntu1~cloud0
+old : 
+}
+                   python-greenlet: { new : 0.4.1-0ubuntu1~cloud0
+old : 
+}
+                   python-setuptools-git: { new : 1.0b1-0ubuntu2~cloud0
+old : 
+}
+                   python2.7-iso8601: { new : 1
+old : 
+}
+                   python-urllib3: { new : 1.6-2~cloud0
+old : 
+}
+                   python-openid: { new : 2.2.5-3ubuntu1
+old : 
+}
+                   python-pastedeploy: { new : 1.5.0-2build1
+old : 
+}
+                   swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-prettytable: { new : 0.6.1-1ubuntu1~cloud0
+old : 
+}
+                   python2.7-swift: { new : 1
+old : 
+}
+                   python-dnspython: { new : 1.9.4-0ubuntu3
+old : 
+}
+                   swift-doc: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-requests: { new : 1.2.3-1~cloud0
+old : 
+}
+                   python-iso8601: { new : 0.1.4-1ubuntu1
+old : 
+}
+                   python-oslo-config: { new : 1
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /etc/swift updated
+        Changes:   group: swift
+                   mode: 755
+                   user: swift
+                   
+----------
+    State: - file
+    Name:      /etc/swift/swift.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/swift.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /var/run/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/run/swift updated
+        Changes:   /var/run/swift: New Dir
+                   
+----------
+    State: - pkg
+    Name:      xfsprogs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: xfsprogs.
+        Changes:   libreadline5: { new : 5.2-11
+old : 
+}
+                   fsck-backend: { new : 1
+old : 
+}
+                   xfsprogs: { new : 3.1.7
+old : 
+}
+                   
+----------
+    State: - loopbackdisk
+    Name:      sda
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sda.disk
+
+        Changes:   
+----------
+    State: - loopbackdisk
+    Name:      sdb
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sdb.disk
+
+        Changes:   
+----------
+    State: - mount
+    Name:      /srv/node/sda
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - mount
+    Name:      /srv/node/sdb
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - pkg
+    Name:      rsyncpkgs
+    Function:  installed
+        Result:    True
+        Comment:   All specified packages are already installed.
+        Changes:   
+----------
+    State: - pkg
+    Name:      swift-account
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-account.
+        Changes:   swift-account: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-container
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-container.
+        Changes:   swift-container: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-object
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-object.
+        Changes:   swift-object: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - service
+    Name:      rsync
+    Function:  running
+        Result:    True
+        Comment:   Service rsync is already enabled, and is running
+        Changes:   
+----------
+    State: - service
+    Name:      swift-ring-minion
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-minion has been enabled, and is running
+        Changes:   swift-ring-minion: True
+                   
+storage1-Z4.demo:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, git-core, python-dev. The following packages were already installed: parted, curl.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   git-man: { new : 1:1.7.9.5-1
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   git-completion: { new : 1
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   git: { new : 1:1.7.9.5-1
+old : 
+}
+                   liberror-perl: { new : 0.17-1
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   git-core: { new : 1:1.7.9.5-1
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - git
+    Name:      https://github.com/pandemicsyn/swift-ring-master.git
+    Function:  latest
+        Result:    True
+        Comment:   Repository https://github.com/pandemicsyn/swift-ring-master.git cloned to /usr/src/swift-ring-master
+        Changes:   new: https://github.com/pandemicsyn/swift-ring-master.git
+                   revision: 3744e5dc74c798d232432cbd93de772770068654
+                   
+----------
+    State: - cmd
+    Name:      python setup.py install
+    Function:  wait
+        Result:    True
+        Comment:   Command "python setup.py install" run
+        Changes:   pid: 10496
+                   retcode: 0
+                   stderr: zip_safe flag not set; analyzing archive contents...
+/tmp/easy_install-TEJJid/greenlet-0.4.1/temp/tmp9d5lNC/simple.c:1:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+greenlet.c: In function 'g_switch':
+greenlet.c:593:5: warning: 'err' may be used uninitialized in this function [-Wuninitialized]
+                   stdout: running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating swift_ring_master.egg-info
+writing requirements to swift_ring_master.egg-info/requires.txt
+writing swift_ring_master.egg-info/PKG-INFO
+writing top-level names to swift_ring_master.egg-info/top_level.txt
+writing dependency_links to swift_ring_master.egg-info/dependency_links.txt
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+reading manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterd.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterwsgi.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/__init__.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringminion.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/utils.py -> build/lib.linux-x86_64-2.7/srm
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterd.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterwsgi.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/__init__.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringminion.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/utils.py -> build/bdist.linux-x86_64/egg/srm
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterd.py to ringmasterd.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterwsgi.py to ringmasterwsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringminion.py to ringminion.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/utils.py to utils.pyc
+installing package data to build/bdist.linux-x86_64/egg
+running install_data
+creating build/bdist.linux-x86_64/egg/share
+creating build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying README.md -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-master.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-minion.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-wsgi-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-minion -> /etc/init.d
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/swift-target-weight -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-wsgi-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-minion-server -> build/scripts-2.7
+changing mode of build/scripts-2.7/swift-target-weight from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-wsgi-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-minion-server from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-wsgi-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-minion-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-target-weight -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-wsgi-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-minion-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-target-weight to 755
+copying swift_ring_master.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/swift_ring_master-0.1.17-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing swift_ring_master-0.1.17-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Extracting swift_ring_master-0.1.17-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding swift-ring-master 0.1.17 to easy-install.pth file
+Installing swift-ring-master-server script to /usr/local/bin
+Installing swift-ring-master-wsgi-server script to /usr/local/bin
+Installing swift-ring-minion-server script to /usr/local/bin
+Installing swift-target-weight script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Processing dependencies for swift-ring-master==0.1.17
+Searching for eventlet
+Reading http://pypi.python.org/simple/eventlet/
+Reading http://eventlet.net
+Reading http://wiki.secondlife.com/wiki/Eventlet
+Best match: eventlet 0.13.0
+Downloading https://pypi.python.org/packages/source/e/eventlet/eventlet-0.13.0.tar.gz#md5=104fb01f488b1e7e4382aa87336b0b69
+Processing eventlet-0.13.0.tar.gz
+Running eventlet-0.13.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-hZMSN9/eventlet-0.13.0/egg-dist-tmp-kATVGe
+Adding eventlet 0.13.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/eventlet-0.13.0-py2.7.egg
+Searching for greenlet>=0.3
+Reading http://pypi.python.org/simple/greenlet/
+Best match: greenlet 0.4.1
+Downloading https://pypi.python.org/packages/source/g/greenlet/greenlet-0.4.1.zip#md5=c2deda75bdda59c38cae12a77cc53adc
+Processing greenlet-0.4.1.zip
+Running greenlet-0.4.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-TEJJid/greenlet-0.4.1/egg-dist-tmp-4lEUG0
+Adding greenlet 0.4.1 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-x86_64.egg
+Finished processing dependencies for swift-ring-master==0.1.17
+                   
+----------
+    State: - file
+    Name:      /etc/default/rsync
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/default/rsync updated
+        Changes:   diff: --- 
++++ 
+@@ -1,41 +1,3 @@
+-# defaults file for rsync daemon mode
+-
+-# start rsync in daemon mode from init.d script?
+-#  only allowed values are "true", "false", and "inetd"
+-#  Use "inetd" if you want to start the rsyncd from inetd,
+-#  all this does is prevent the init.d script from printing a message
+-#  about not starting rsyncd (you still need to modify inetd's config yourself).
+-RSYNC_ENABLE=false
+-
+-# which file should be used as the configuration file for rsync.
+-# This file is used instead of the default /etc/rsyncd.conf
+-# Warning: This option has no effect if the daemon is accessed
+-#          using a remote shell. When using a different file for
+-#          rsync you might want to symlink /etc/rsyncd.conf to
+-#          that file.
+-# RSYNC_CONFIG_FILE=
+-
+-# what extra options to give rsync --daemon?
+-#  that excludes the --daemon; that's always done in the init.d script
+-#  Possibilities are:
+-#   --address=123.45.67.89   (bind to a specific IP address)
+-#   --port=8730        (bind to specified port; default 873)
++RSYNC_ENABLE=true
+ RSYNC_OPTS=''
+-
+-# run rsyncd at a nice level?
+-#  the rsync daemon can impact performance due to much I/O and CPU usage,
+-#  so you may want to run it at a nicer priority than the default priority.
+-#  Allowed values are 0 - 19 inclusive; 10 is a reasonable value.
+ RSYNC_NICE=''
+-
+-# run rsyncd with ionice?
+-#  "ionice" does for IO load what "nice" does for CPU load.
+-#  As rsync is often used for backups which aren't all that time-critical,
+-#  reducing the rsync IO priority will benefit the rest of the system.
+-#  See the manpage for ionice for allowed options.
+-#  -c3 is recommended, this will run rsync IO at "idle" priority. Uncomment
+-#  the next line to activate this.
+-# RSYNC_IONICE='-c3'
+-
+-# Don't forget to create an appropriate config file,
+-# else the daemon will not start.
+
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-minion
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-minion updated
+        Changes:   diff: --- 
++++ 
+@@ -17,16 +17,16 @@
+ case "$1" in
+     start)
+         echo "Starting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     stop)
+         echo "Stopping swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
+         ;;
+     restart)
+         echo "Restarting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     *)
+         echo "Usage: /etc/init.d/swift-ring-minion {start|stop|restart}"
+
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/rsyncd.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/rsyncd.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/account-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/account-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/container-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/container-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/object-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/object-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/ring-minion.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/ring-minion.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      swiftpkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-greenlet, swift-doc=1.9.0-0ubuntu1~cloud0, python-eventlet, python-swift=1.9.0-0ubuntu1~cloud0, swift=1.9.0-0ubuntu1~cloud0, python-swiftclient=1:1.5.0-0ubuntu1~cloud0.
+        Changes:   python-pyxattr: { new : 1
+old : 
+}
+                   python-swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   libjs-underscore: { new : 1.1.6-1ubuntu2
+old : 
+}
+                   python-xattr: { new : 0.6.2-1ubuntu1
+old : 
+}
+                   python-eventlet: { new : 0.13.0-0ubuntu1~cloud0
+old : 
+}
+                   python-d2to1: { new : 0.2.10-1ubuntu4~cloud0
+old : 
+}
+                   python-paste: { new : 1.7.5.1-4ubuntu2
+old : 
+}
+                   python-oslo.config: { new : 1:1.2.0a3-1ubuntu1~cloud0
+old : 
+}
+                   python-formencode: { new : 1.2.4-2ubuntu2
+old : 
+}
+                   python-pbr: { new : 0.5.16-4~cloud0
+old : 
+}
+                   python-six: { new : 1.1.0-2
+old : 
+}
+                   python-netifaces: { new : 0.6-2ubuntu1
+old : 
+}
+                   python-scgi: { new : 1.13-1ubuntu1
+old : 
+}
+                   libjs-sphinxdoc: { new : 1.1.3+dfsg-2ubuntu2.1
+old : 
+}
+                   python-pastescript: { new : 1.7.5-1
+old : 
+}
+                   python2.7-scgi: { new : 1
+old : 
+}
+                   python-swiftclient: { new : 1:1.5.0-0ubuntu1~cloud0
+old : 
+}
+                   python2.7-netifaces: { new : 1
+old : 
+}
+                   python-keystoneclient: { new : 1:0.3.1-0ubuntu1~cloud0
+old : 
+}
+                   python-greenlet: { new : 0.4.1-0ubuntu1~cloud0
+old : 
+}
+                   python-setuptools-git: { new : 1.0b1-0ubuntu2~cloud0
+old : 
+}
+                   python2.7-iso8601: { new : 1
+old : 
+}
+                   python-urllib3: { new : 1.6-2~cloud0
+old : 
+}
+                   python-openid: { new : 2.2.5-3ubuntu1
+old : 
+}
+                   python-pastedeploy: { new : 1.5.0-2build1
+old : 
+}
+                   swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-prettytable: { new : 0.6.1-1ubuntu1~cloud0
+old : 
+}
+                   python2.7-swift: { new : 1
+old : 
+}
+                   python-dnspython: { new : 1.9.4-0ubuntu3
+old : 
+}
+                   swift-doc: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-requests: { new : 1.2.3-1~cloud0
+old : 
+}
+                   python-iso8601: { new : 0.1.4-1ubuntu1
+old : 
+}
+                   python-oslo-config: { new : 1
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /etc/swift updated
+        Changes:   group: swift
+                   mode: 755
+                   user: swift
+                   
+----------
+    State: - file
+    Name:      /etc/swift/swift.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/swift.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /var/run/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/run/swift updated
+        Changes:   /var/run/swift: New Dir
+                   
+----------
+    State: - pkg
+    Name:      xfsprogs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: xfsprogs.
+        Changes:   libreadline5: { new : 5.2-11
+old : 
+}
+                   fsck-backend: { new : 1
+old : 
+}
+                   xfsprogs: { new : 3.1.7
+old : 
+}
+                   
+----------
+    State: - loopbackdisk
+    Name:      sda
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sda.disk
+
+        Changes:   
+----------
+    State: - loopbackdisk
+    Name:      sdb
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sdb.disk
+
+        Changes:   
+----------
+    State: - mount
+    Name:      /srv/node/sda
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - mount
+    Name:      /srv/node/sdb
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - pkg
+    Name:      rsyncpkgs
+    Function:  installed
+        Result:    True
+        Comment:   All specified packages are already installed.
+        Changes:   
+----------
+    State: - pkg
+    Name:      swift-account
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-account.
+        Changes:   swift-account: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-container
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-container.
+        Changes:   swift-container: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-object
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-object.
+        Changes:   swift-object: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - service
+    Name:      rsync
+    Function:  running
+        Result:    True
+        Comment:   Service rsync is already enabled, and is running
+        Changes:   
+----------
+    State: - service
+    Name:      swift-ring-minion
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-minion has been enabled, and is running
+        Changes:   swift-ring-minion: True
+                   
+services1.demo:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, git-core, python-dev. The following packages were already installed: parted, curl.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   git-man: { new : 1:1.7.9.5-1
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   git-completion: { new : 1
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   git: { new : 1:1.7.9.5-1
+old : 
+}
+                   liberror-perl: { new : 0.17-1
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   git-core: { new : 1:1.7.9.5-1
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - git
+    Name:      https://github.com/pandemicsyn/swift-ring-master.git
+    Function:  latest
+        Result:    True
+        Comment:   Repository https://github.com/pandemicsyn/swift-ring-master.git cloned to /usr/src/swift-ring-master
+        Changes:   new: https://github.com/pandemicsyn/swift-ring-master.git
+                   revision: 3744e5dc74c798d232432cbd93de772770068654
+                   
+----------
+    State: - cmd
+    Name:      python setup.py install
+    Function:  wait
+        Result:    True
+        Comment:   Command "python setup.py install" run
+        Changes:   pid: 10520
+                   retcode: 0
+                   stderr: zip_safe flag not set; analyzing archive contents...
+/tmp/easy_install-eoLDqp/greenlet-0.4.1/temp/tmpBmE6f5/simple.c:1:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+greenlet.c: In function 'g_switch':
+greenlet.c:593:5: warning: 'err' may be used uninitialized in this function [-Wuninitialized]
+                   stdout: running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating swift_ring_master.egg-info
+writing requirements to swift_ring_master.egg-info/requires.txt
+writing swift_ring_master.egg-info/PKG-INFO
+writing top-level names to swift_ring_master.egg-info/top_level.txt
+writing dependency_links to swift_ring_master.egg-info/dependency_links.txt
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+reading manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterd.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterwsgi.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/__init__.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringminion.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/utils.py -> build/lib.linux-x86_64-2.7/srm
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterd.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterwsgi.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/__init__.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringminion.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/utils.py -> build/bdist.linux-x86_64/egg/srm
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterd.py to ringmasterd.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterwsgi.py to ringmasterwsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringminion.py to ringminion.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/utils.py to utils.pyc
+installing package data to build/bdist.linux-x86_64/egg
+running install_data
+creating build/bdist.linux-x86_64/egg/share
+creating build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying README.md -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-master.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-minion.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-wsgi-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-minion -> /etc/init.d
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/swift-target-weight -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-wsgi-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-minion-server -> build/scripts-2.7
+changing mode of build/scripts-2.7/swift-target-weight from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-wsgi-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-minion-server from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-wsgi-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-minion-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-target-weight -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-wsgi-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-minion-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-target-weight to 755
+copying swift_ring_master.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/swift_ring_master-0.1.17-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing swift_ring_master-0.1.17-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Extracting swift_ring_master-0.1.17-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding swift-ring-master 0.1.17 to easy-install.pth file
+Installing swift-ring-master-server script to /usr/local/bin
+Installing swift-ring-master-wsgi-server script to /usr/local/bin
+Installing swift-ring-minion-server script to /usr/local/bin
+Installing swift-target-weight script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Processing dependencies for swift-ring-master==0.1.17
+Searching for eventlet
+Reading http://pypi.python.org/simple/eventlet/
+Reading http://eventlet.net
+Reading http://wiki.secondlife.com/wiki/Eventlet
+Best match: eventlet 0.13.0
+Downloading https://pypi.python.org/packages/source/e/eventlet/eventlet-0.13.0.tar.gz#md5=104fb01f488b1e7e4382aa87336b0b69
+Processing eventlet-0.13.0.tar.gz
+Running eventlet-0.13.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-j_Jy3d/eventlet-0.13.0/egg-dist-tmp-ferWK7
+Adding eventlet 0.13.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/eventlet-0.13.0-py2.7.egg
+Searching for greenlet>=0.3
+Reading http://pypi.python.org/simple/greenlet/
+Best match: greenlet 0.4.1
+Downloading https://pypi.python.org/packages/source/g/greenlet/greenlet-0.4.1.zip#md5=c2deda75bdda59c38cae12a77cc53adc
+Processing greenlet-0.4.1.zip
+Running greenlet-0.4.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-eoLDqp/greenlet-0.4.1/egg-dist-tmp-GZ85RP
+Adding greenlet 0.4.1 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-x86_64.egg
+Finished processing dependencies for swift-ring-master==0.1.17
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-master-server
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-master-server updated
+        Changes:   diff: New file
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-master-wsgi
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-master-wsgi updated
+        Changes:   diff: New file
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/swift/ring-master.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/ring-master.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      swiftpkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-greenlet, swift-doc=1.9.0-0ubuntu1~cloud0, python-eventlet, python-swift=1.9.0-0ubuntu1~cloud0, swift=1.9.0-0ubuntu1~cloud0, python-swiftclient=1:1.5.0-0ubuntu1~cloud0.
+        Changes:   python-pyxattr: { new : 1
+old : 
+}
+                   python-swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   libjs-underscore: { new : 1.1.6-1ubuntu2
+old : 
+}
+                   python-xattr: { new : 0.6.2-1ubuntu1
+old : 
+}
+                   python-eventlet: { new : 0.13.0-0ubuntu1~cloud0
+old : 
+}
+                   python-d2to1: { new : 0.2.10-1ubuntu4~cloud0
+old : 
+}
+                   python-paste: { new : 1.7.5.1-4ubuntu2
+old : 
+}
+                   python-oslo.config: { new : 1:1.2.0a3-1ubuntu1~cloud0
+old : 
+}
+                   python-formencode: { new : 1.2.4-2ubuntu2
+old : 
+}
+                   python-pbr: { new : 0.5.16-4~cloud0
+old : 
+}
+                   python-six: { new : 1.1.0-2
+old : 
+}
+                   python-netifaces: { new : 0.6-2ubuntu1
+old : 
+}
+                   python-scgi: { new : 1.13-1ubuntu1
+old : 
+}
+                   libjs-sphinxdoc: { new : 1.1.3+dfsg-2ubuntu2.1
+old : 
+}
+                   python-pastescript: { new : 1.7.5-1
+old : 
+}
+                   python2.7-scgi: { new : 1
+old : 
+}
+                   python-swiftclient: { new : 1:1.5.0-0ubuntu1~cloud0
+old : 
+}
+                   python2.7-netifaces: { new : 1
+old : 
+}
+                   python-keystoneclient: { new : 1:0.3.1-0ubuntu1~cloud0
+old : 
+}
+                   python-greenlet: { new : 0.4.1-0ubuntu1~cloud0
+old : 
+}
+                   python-setuptools-git: { new : 1.0b1-0ubuntu2~cloud0
+old : 
+}
+                   python2.7-iso8601: { new : 1
+old : 
+}
+                   python-urllib3: { new : 1.6-2~cloud0
+old : 
+}
+                   python-openid: { new : 2.2.5-3ubuntu1
+old : 
+}
+                   python-pastedeploy: { new : 1.5.0-2build1
+old : 
+}
+                   swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-prettytable: { new : 0.6.1-1ubuntu1~cloud0
+old : 
+}
+                   python2.7-swift: { new : 1
+old : 
+}
+                   python-dnspython: { new : 1.9.4-0ubuntu3
+old : 
+}
+                   swift-doc: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-requests: { new : 1.2.3-1~cloud0
+old : 
+}
+                   python-iso8601: { new : 0.1.4-1ubuntu1
+old : 
+}
+                   python-oslo-config: { new : 1
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /etc/swift updated
+        Changes:   group: swift
+                   mode: 755
+                   user: swift
+                   
+----------
+    State: - file
+    Name:      /etc/swift/swift.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/swift.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /var/log/ring-master
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/log/ring-master updated
+        Changes:   /var/log/ring-master: New Dir
+                   
+----------
+    State: - file
+    Name:      /var/run/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/run/swift updated
+        Changes:   /var/run/swift: New Dir
+                   
+----------
+    State: - service
+    Name:      swift-ring-master-server
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-master-server has been enabled, and is running
+        Changes:   swift-ring-master-server: True
+                   
+----------
+    State: - service
+    Name:      swift-ring-master-wsgi
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-master-wsgi has been enabled, and is running
+        Changes:   swift-ring-master-wsgi: True
+                   
+storage1-Z2.demo:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, git-core, python-dev. The following packages were already installed: parted, curl.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   git-man: { new : 1:1.7.9.5-1
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   git-completion: { new : 1
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   git: { new : 1:1.7.9.5-1
+old : 
+}
+                   liberror-perl: { new : 0.17-1
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   git-core: { new : 1:1.7.9.5-1
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - git
+    Name:      https://github.com/pandemicsyn/swift-ring-master.git
+    Function:  latest
+        Result:    True
+        Comment:   Repository https://github.com/pandemicsyn/swift-ring-master.git cloned to /usr/src/swift-ring-master
+        Changes:   new: https://github.com/pandemicsyn/swift-ring-master.git
+                   revision: 3744e5dc74c798d232432cbd93de772770068654
+                   
+----------
+    State: - cmd
+    Name:      python setup.py install
+    Function:  wait
+        Result:    True
+        Comment:   Command "python setup.py install" run
+        Changes:   pid: 10541
+                   retcode: 0
+                   stderr: zip_safe flag not set; analyzing archive contents...
+/tmp/easy_install-oX5Vy0/greenlet-0.4.1/temp/tmp4u_rPu/simple.c:1:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+greenlet.c: In function 'g_switch':
+greenlet.c:593:5: warning: 'err' may be used uninitialized in this function [-Wuninitialized]
+                   stdout: running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating swift_ring_master.egg-info
+writing requirements to swift_ring_master.egg-info/requires.txt
+writing swift_ring_master.egg-info/PKG-INFO
+writing top-level names to swift_ring_master.egg-info/top_level.txt
+writing dependency_links to swift_ring_master.egg-info/dependency_links.txt
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+reading manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterd.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterwsgi.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/__init__.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringminion.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/utils.py -> build/lib.linux-x86_64-2.7/srm
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterd.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterwsgi.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/__init__.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringminion.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/utils.py -> build/bdist.linux-x86_64/egg/srm
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterd.py to ringmasterd.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterwsgi.py to ringmasterwsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringminion.py to ringminion.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/utils.py to utils.pyc
+installing package data to build/bdist.linux-x86_64/egg
+running install_data
+creating build/bdist.linux-x86_64/egg/share
+creating build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying README.md -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-master.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-minion.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-wsgi-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-minion -> /etc/init.d
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/swift-target-weight -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-wsgi-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-minion-server -> build/scripts-2.7
+changing mode of build/scripts-2.7/swift-target-weight from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-wsgi-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-minion-server from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-wsgi-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-minion-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-target-weight -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-wsgi-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-minion-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-target-weight to 755
+copying swift_ring_master.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/swift_ring_master-0.1.17-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing swift_ring_master-0.1.17-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Extracting swift_ring_master-0.1.17-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding swift-ring-master 0.1.17 to easy-install.pth file
+Installing swift-ring-master-server script to /usr/local/bin
+Installing swift-ring-master-wsgi-server script to /usr/local/bin
+Installing swift-ring-minion-server script to /usr/local/bin
+Installing swift-target-weight script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Processing dependencies for swift-ring-master==0.1.17
+Searching for eventlet
+Reading http://pypi.python.org/simple/eventlet/
+Reading http://eventlet.net
+Reading http://wiki.secondlife.com/wiki/Eventlet
+Best match: eventlet 0.13.0
+Downloading https://pypi.python.org/packages/source/e/eventlet/eventlet-0.13.0.tar.gz#md5=104fb01f488b1e7e4382aa87336b0b69
+Processing eventlet-0.13.0.tar.gz
+Running eventlet-0.13.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-8n7OXU/eventlet-0.13.0/egg-dist-tmp-AOtsiw
+Adding eventlet 0.13.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/eventlet-0.13.0-py2.7.egg
+Searching for greenlet>=0.3
+Reading http://pypi.python.org/simple/greenlet/
+Best match: greenlet 0.4.1
+Downloading https://pypi.python.org/packages/source/g/greenlet/greenlet-0.4.1.zip#md5=c2deda75bdda59c38cae12a77cc53adc
+Processing greenlet-0.4.1.zip
+Running greenlet-0.4.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-oX5Vy0/greenlet-0.4.1/egg-dist-tmp-nDPX08
+Adding greenlet 0.4.1 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-x86_64.egg
+Finished processing dependencies for swift-ring-master==0.1.17
+                   
+----------
+    State: - file
+    Name:      /etc/default/rsync
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/default/rsync updated
+        Changes:   diff: --- 
++++ 
+@@ -1,41 +1,3 @@
+-# defaults file for rsync daemon mode
+-
+-# start rsync in daemon mode from init.d script?
+-#  only allowed values are "true", "false", and "inetd"
+-#  Use "inetd" if you want to start the rsyncd from inetd,
+-#  all this does is prevent the init.d script from printing a message
+-#  about not starting rsyncd (you still need to modify inetd's config yourself).
+-RSYNC_ENABLE=false
+-
+-# which file should be used as the configuration file for rsync.
+-# This file is used instead of the default /etc/rsyncd.conf
+-# Warning: This option has no effect if the daemon is accessed
+-#          using a remote shell. When using a different file for
+-#          rsync you might want to symlink /etc/rsyncd.conf to
+-#          that file.
+-# RSYNC_CONFIG_FILE=
+-
+-# what extra options to give rsync --daemon?
+-#  that excludes the --daemon; that's always done in the init.d script
+-#  Possibilities are:
+-#   --address=123.45.67.89   (bind to a specific IP address)
+-#   --port=8730        (bind to specified port; default 873)
++RSYNC_ENABLE=true
+ RSYNC_OPTS=''
+-
+-# run rsyncd at a nice level?
+-#  the rsync daemon can impact performance due to much I/O and CPU usage,
+-#  so you may want to run it at a nicer priority than the default priority.
+-#  Allowed values are 0 - 19 inclusive; 10 is a reasonable value.
+ RSYNC_NICE=''
+-
+-# run rsyncd with ionice?
+-#  "ionice" does for IO load what "nice" does for CPU load.
+-#  As rsync is often used for backups which aren't all that time-critical,
+-#  reducing the rsync IO priority will benefit the rest of the system.
+-#  See the manpage for ionice for allowed options.
+-#  -c3 is recommended, this will run rsync IO at "idle" priority. Uncomment
+-#  the next line to activate this.
+-# RSYNC_IONICE='-c3'
+-
+-# Don't forget to create an appropriate config file,
+-# else the daemon will not start.
+
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-minion
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-minion updated
+        Changes:   diff: --- 
++++ 
+@@ -17,16 +17,16 @@
+ case "$1" in
+     start)
+         echo "Starting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     stop)
+         echo "Stopping swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
+         ;;
+     restart)
+         echo "Restarting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     *)
+         echo "Usage: /etc/init.d/swift-ring-minion {start|stop|restart}"
+
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/rsyncd.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/rsyncd.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/account-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/account-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/container-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/container-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/object-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/object-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/ring-minion.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/ring-minion.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      swiftpkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-greenlet, swift-doc=1.9.0-0ubuntu1~cloud0, python-eventlet, python-swift=1.9.0-0ubuntu1~cloud0, swift=1.9.0-0ubuntu1~cloud0, python-swiftclient=1:1.5.0-0ubuntu1~cloud0.
+        Changes:   python-pyxattr: { new : 1
+old : 
+}
+                   python-swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   libjs-underscore: { new : 1.1.6-1ubuntu2
+old : 
+}
+                   python-xattr: { new : 0.6.2-1ubuntu1
+old : 
+}
+                   python-eventlet: { new : 0.13.0-0ubuntu1~cloud0
+old : 
+}
+                   python-d2to1: { new : 0.2.10-1ubuntu4~cloud0
+old : 
+}
+                   python-paste: { new : 1.7.5.1-4ubuntu2
+old : 
+}
+                   python-oslo.config: { new : 1:1.2.0a3-1ubuntu1~cloud0
+old : 
+}
+                   python-formencode: { new : 1.2.4-2ubuntu2
+old : 
+}
+                   python-pbr: { new : 0.5.16-4~cloud0
+old : 
+}
+                   python-six: { new : 1.1.0-2
+old : 
+}
+                   python-netifaces: { new : 0.6-2ubuntu1
+old : 
+}
+                   python-scgi: { new : 1.13-1ubuntu1
+old : 
+}
+                   libjs-sphinxdoc: { new : 1.1.3+dfsg-2ubuntu2.1
+old : 
+}
+                   python-pastescript: { new : 1.7.5-1
+old : 
+}
+                   python2.7-scgi: { new : 1
+old : 
+}
+                   python-swiftclient: { new : 1:1.5.0-0ubuntu1~cloud0
+old : 
+}
+                   python2.7-netifaces: { new : 1
+old : 
+}
+                   python-keystoneclient: { new : 1:0.3.1-0ubuntu1~cloud0
+old : 
+}
+                   python-greenlet: { new : 0.4.1-0ubuntu1~cloud0
+old : 
+}
+                   python-setuptools-git: { new : 1.0b1-0ubuntu2~cloud0
+old : 
+}
+                   python2.7-iso8601: { new : 1
+old : 
+}
+                   python-urllib3: { new : 1.6-2~cloud0
+old : 
+}
+                   python-openid: { new : 2.2.5-3ubuntu1
+old : 
+}
+                   python-pastedeploy: { new : 1.5.0-2build1
+old : 
+}
+                   swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-prettytable: { new : 0.6.1-1ubuntu1~cloud0
+old : 
+}
+                   python2.7-swift: { new : 1
+old : 
+}
+                   python-dnspython: { new : 1.9.4-0ubuntu3
+old : 
+}
+                   swift-doc: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-requests: { new : 1.2.3-1~cloud0
+old : 
+}
+                   python-iso8601: { new : 0.1.4-1ubuntu1
+old : 
+}
+                   python-oslo-config: { new : 1
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /etc/swift updated
+        Changes:   group: swift
+                   mode: 755
+                   user: swift
+                   
+----------
+    State: - file
+    Name:      /etc/swift/swift.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/swift.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /var/run/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/run/swift updated
+        Changes:   /var/run/swift: New Dir
+                   
+----------
+    State: - pkg
+    Name:      xfsprogs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: xfsprogs.
+        Changes:   libreadline5: { new : 5.2-11
+old : 
+}
+                   fsck-backend: { new : 1
+old : 
+}
+                   xfsprogs: { new : 3.1.7
+old : 
+}
+                   
+----------
+    State: - loopbackdisk
+    Name:      sda
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sda.disk
+
+        Changes:   
+----------
+    State: - loopbackdisk
+    Name:      sdb
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sdb.disk
+
+        Changes:   
+----------
+    State: - mount
+    Name:      /srv/node/sda
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - mount
+    Name:      /srv/node/sdb
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - pkg
+    Name:      rsyncpkgs
+    Function:  installed
+        Result:    True
+        Comment:   All specified packages are already installed.
+        Changes:   
+----------
+    State: - pkg
+    Name:      swift-account
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-account.
+        Changes:   swift-account: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-container
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-container.
+        Changes:   swift-container: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-object
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-object.
+        Changes:   swift-object: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - service
+    Name:      rsync
+    Function:  running
+        Result:    True
+        Comment:   Service rsync is already enabled, and is running
+        Changes:   
+----------
+    State: - service
+    Name:      swift-ring-minion
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-minion has been enabled, and is running
+        Changes:   swift-ring-minion: True
+                   
+storage1-Z3.demo:
+----------
+    State: - pkg
+    Name:      corepkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-setuptools, ubuntu-cloud-keyring, python-pip, gcc, ipython, git-core, python-dev. The following packages were already installed: parted, curl.
+        Changes:   libgomp1: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python-configobj: { new : 4.7.2+ds-3build1
+old : 
+}
+                   libmpfr4: { new : 3.1.0-3ubuntu2
+old : 
+}
+                   libz-dev: { new : 1
+old : 
+}
+                   gcc-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   python2.7-dev: { new : 2.7.3-0ubuntu3.2
+old : 
+}
+                   git-man: { new : 1:1.7.9.5-1
+old : 
+}
+                   linux-libc-dev: { new : 3.2.0-52.78
+old : 
+}
+                   cpp-4.6: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   git-completion: { new : 1
+old : 
+}
+                   python-dev: { new : 2.7.3-0ubuntu2.2
+old : 
+}
+                   gcc: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   git: { new : 1:1.7.9.5-1
+old : 
+}
+                   liberror-perl: { new : 0.17-1
+old : 
+}
+                   ubuntu-cloud-keyring: { new : 2012.08.14~12.04.1
+old : 
+}
+                   python-decorator: { new : 3.3.2-1
+old : 
+}
+                   python2.7-pexpect: { new : 1
+old : 
+}
+                   libssl-doc: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   c-compiler: { new : 1
+old : 
+}
+                   libquadmath0: { new : 4.6.3-1ubuntu5
+old : 
+}
+                   libmpc2: { new : 0.9-4
+old : 
+}
+                   git-core: { new : 1:1.7.9.5-1
+old : 
+}
+                   python-setuptools: { new : 0.6.24-1ubuntu1
+old : 
+}
+                   libc-dev-bin: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   libssl-dev: { new : 1.0.1-4ubuntu5.10
+old : 
+}
+                   libc6-dev: { new : 2.15-0ubuntu10.4
+old : 
+}
+                   python-simplegeneric: { new : 0.7-1build1
+old : 
+}
+                   ipython: { new : 0.12.1+dfsg-0ubuntu1
+old : 
+}
+                   python-pexpect: { new : 2.3-1ubuntu2
+old : 
+}
+                   elf-binutils: { new : 1
+old : 
+}
+                   manpages-dev: { new : 3.35-0.1ubuntu1
+old : 
+}
+                   python-pip: { new : 1.0-1build1
+old : 
+}
+                   python-distribute: { new : 1
+old : 
+}
+                   python2.7-simplegeneric: { new : 1
+old : 
+}
+                   linux-kernel-headers: { new : 1
+old : 
+}
+                   libexpat1-dev: { new : 2.0.1-7.2ubuntu1.1
+old : 
+}
+                   libc-dev: { new : 1
+old : 
+}
+                   libexpat-dev: { new : 1
+old : 
+}
+                   cpp: { new : 4:4.6.3-1ubuntu5
+old : 
+}
+                   zlib1g-dev: { new : 1:1.2.3.4.dfsg-3ubuntu4
+old : 
+}
+                   binutils: { new : 2.22-6ubuntu1.1
+old : 
+}
+                   
+----------
+    State: - pkgrepo
+    Name:      deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+    Function:  managed
+        Result:    True
+        Comment:   Configured package repo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+        Changes:   repo: deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/havana main
+                   
+----------
+    State: - git
+    Name:      https://github.com/pandemicsyn/swift-ring-master.git
+    Function:  latest
+        Result:    True
+        Comment:   Repository https://github.com/pandemicsyn/swift-ring-master.git cloned to /usr/src/swift-ring-master
+        Changes:   new: https://github.com/pandemicsyn/swift-ring-master.git
+                   revision: 3744e5dc74c798d232432cbd93de772770068654
+                   
+----------
+    State: - cmd
+    Name:      python setup.py install
+    Function:  wait
+        Result:    True
+        Comment:   Command "python setup.py install" run
+        Changes:   pid: 10533
+                   retcode: 0
+                   stderr: zip_safe flag not set; analyzing archive contents...
+/tmp/easy_install-Iwb0oe/greenlet-0.4.1/temp/tmpK9UwIt/simple.c:1:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+greenlet.c: In function 'g_switch':
+greenlet.c:593:5: warning: 'err' may be used uninitialized in this function [-Wuninitialized]
+                   stdout: running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating swift_ring_master.egg-info
+writing requirements to swift_ring_master.egg-info/requires.txt
+writing swift_ring_master.egg-info/PKG-INFO
+writing top-level names to swift_ring_master.egg-info/top_level.txt
+writing dependency_links to swift_ring_master.egg-info/dependency_links.txt
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+reading manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+writing manifest file 'swift_ring_master.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterd.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringmasterwsgi.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/__init__.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/ringminion.py -> build/lib.linux-x86_64-2.7/srm
+copying srm/utils.py -> build/lib.linux-x86_64-2.7/srm
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterd.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringmasterwsgi.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/__init__.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/ringminion.py -> build/bdist.linux-x86_64/egg/srm
+copying build/lib.linux-x86_64-2.7/srm/utils.py -> build/bdist.linux-x86_64/egg/srm
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterd.py to ringmasterd.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringmasterwsgi.py to ringmasterwsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/ringminion.py to ringminion.pyc
+byte-compiling build/bdist.linux-x86_64/egg/srm/utils.py to utils.pyc
+installing package data to build/bdist.linux-x86_64/egg
+running install_data
+creating build/bdist.linux-x86_64/egg/share
+creating build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying README.md -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-master.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/swift/ring-minion.conf-sample -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-master-wsgi-init -> build/bdist.linux-x86_64/egg/share/swift-ring-master
+copying etc/init.d/swift-ring-minion -> /etc/init.d
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/swift-target-weight -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-master-wsgi-server -> build/scripts-2.7
+copying and adjusting bin/swift-ring-minion-server -> build/scripts-2.7
+changing mode of build/scripts-2.7/swift-target-weight from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-master-wsgi-server from 644 to 755
+changing mode of build/scripts-2.7/swift-ring-minion-server from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-master-wsgi-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-ring-minion-server -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/swift-target-weight -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-master-wsgi-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-ring-minion-server to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/swift-target-weight to 755
+copying swift_ring_master.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying swift_ring_master.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/swift_ring_master-0.1.17-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing swift_ring_master-0.1.17-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Extracting swift_ring_master-0.1.17-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding swift-ring-master 0.1.17 to easy-install.pth file
+Installing swift-ring-master-server script to /usr/local/bin
+Installing swift-ring-master-wsgi-server script to /usr/local/bin
+Installing swift-ring-minion-server script to /usr/local/bin
+Installing swift-target-weight script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/swift_ring_master-0.1.17-py2.7.egg
+Processing dependencies for swift-ring-master==0.1.17
+Searching for eventlet
+Reading http://pypi.python.org/simple/eventlet/
+Reading http://eventlet.net
+Reading http://wiki.secondlife.com/wiki/Eventlet
+Best match: eventlet 0.13.0
+Downloading https://pypi.python.org/packages/source/e/eventlet/eventlet-0.13.0.tar.gz#md5=104fb01f488b1e7e4382aa87336b0b69
+Processing eventlet-0.13.0.tar.gz
+Running eventlet-0.13.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-MHp3Hi/eventlet-0.13.0/egg-dist-tmp-SeHffj
+Adding eventlet 0.13.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/eventlet-0.13.0-py2.7.egg
+Searching for greenlet>=0.3
+Reading http://pypi.python.org/simple/greenlet/
+Best match: greenlet 0.4.1
+Downloading https://pypi.python.org/packages/source/g/greenlet/greenlet-0.4.1.zip#md5=c2deda75bdda59c38cae12a77cc53adc
+Processing greenlet-0.4.1.zip
+Running greenlet-0.4.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-Iwb0oe/greenlet-0.4.1/egg-dist-tmp-uI6yqx
+Adding greenlet 0.4.1 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-x86_64.egg
+Finished processing dependencies for swift-ring-master==0.1.17
+                   
+----------
+    State: - file
+    Name:      /etc/default/rsync
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/default/rsync updated
+        Changes:   diff: --- 
++++ 
+@@ -1,41 +1,3 @@
+-# defaults file for rsync daemon mode
+-
+-# start rsync in daemon mode from init.d script?
+-#  only allowed values are "true", "false", and "inetd"
+-#  Use "inetd" if you want to start the rsyncd from inetd,
+-#  all this does is prevent the init.d script from printing a message
+-#  about not starting rsyncd (you still need to modify inetd's config yourself).
+-RSYNC_ENABLE=false
+-
+-# which file should be used as the configuration file for rsync.
+-# This file is used instead of the default /etc/rsyncd.conf
+-# Warning: This option has no effect if the daemon is accessed
+-#          using a remote shell. When using a different file for
+-#          rsync you might want to symlink /etc/rsyncd.conf to
+-#          that file.
+-# RSYNC_CONFIG_FILE=
+-
+-# what extra options to give rsync --daemon?
+-#  that excludes the --daemon; that's always done in the init.d script
+-#  Possibilities are:
+-#   --address=123.45.67.89   (bind to a specific IP address)
+-#   --port=8730        (bind to specified port; default 873)
++RSYNC_ENABLE=true
+ RSYNC_OPTS=''
+-
+-# run rsyncd at a nice level?
+-#  the rsync daemon can impact performance due to much I/O and CPU usage,
+-#  so you may want to run it at a nicer priority than the default priority.
+-#  Allowed values are 0 - 19 inclusive; 10 is a reasonable value.
+ RSYNC_NICE=''
+-
+-# run rsyncd with ionice?
+-#  "ionice" does for IO load what "nice" does for CPU load.
+-#  As rsync is often used for backups which aren't all that time-critical,
+-#  reducing the rsync IO priority will benefit the rest of the system.
+-#  See the manpage for ionice for allowed options.
+-#  -c3 is recommended, this will run rsync IO at "idle" priority. Uncomment
+-#  the next line to activate this.
+-# RSYNC_IONICE='-c3'
+-
+-# Don't forget to create an appropriate config file,
+-# else the daemon will not start.
+
+                   
+----------
+    State: - file
+    Name:      /etc/init.d/swift-ring-minion
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/init.d/swift-ring-minion updated
+        Changes:   diff: --- 
++++ 
+@@ -17,16 +17,16 @@
+ case "$1" in
+     start)
+         echo "Starting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     stop)
+         echo "Stopping swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
+         ;;
+     restart)
+         echo "Restarting swift-ring-minion"
+-        /usr/bin/swift-ring-minion-server stop --conf=$CONF
+-        /usr/bin/swift-ring-minion-server start --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server stop --conf=$CONF
++        /usr/local/bin/swift-ring-minion-server start --conf=$CONF
+         ;;
+     *)
+         echo "Usage: /etc/init.d/swift-ring-minion {start|stop|restart}"
+
+                   mode: 755
+                   
+----------
+    State: - file
+    Name:      /etc/rsyncd.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/rsyncd.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/account-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/account-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/container-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/container-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/object-server.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/object-server.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /etc/swift/ring-minion.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/ring-minion.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - pkg
+    Name:      swiftpkgs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: python-greenlet, swift-doc=1.9.0-0ubuntu1~cloud0, python-eventlet, python-swift=1.9.0-0ubuntu1~cloud0, swift=1.9.0-0ubuntu1~cloud0, python-swiftclient=1:1.5.0-0ubuntu1~cloud0.
+        Changes:   python-pyxattr: { new : 1
+old : 
+}
+                   python-swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   libjs-underscore: { new : 1.1.6-1ubuntu2
+old : 
+}
+                   python-xattr: { new : 0.6.2-1ubuntu1
+old : 
+}
+                   python-eventlet: { new : 0.13.0-0ubuntu1~cloud0
+old : 
+}
+                   python-d2to1: { new : 0.2.10-1ubuntu4~cloud0
+old : 
+}
+                   python-paste: { new : 1.7.5.1-4ubuntu2
+old : 
+}
+                   python-oslo.config: { new : 1:1.2.0a3-1ubuntu1~cloud0
+old : 
+}
+                   python-formencode: { new : 1.2.4-2ubuntu2
+old : 
+}
+                   python-pbr: { new : 0.5.16-4~cloud0
+old : 
+}
+                   python-six: { new : 1.1.0-2
+old : 
+}
+                   python-netifaces: { new : 0.6-2ubuntu1
+old : 
+}
+                   python-scgi: { new : 1.13-1ubuntu1
+old : 
+}
+                   libjs-sphinxdoc: { new : 1.1.3+dfsg-2ubuntu2.1
+old : 
+}
+                   python-pastescript: { new : 1.7.5-1
+old : 
+}
+                   python2.7-scgi: { new : 1
+old : 
+}
+                   python-swiftclient: { new : 1:1.5.0-0ubuntu1~cloud0
+old : 
+}
+                   python2.7-netifaces: { new : 1
+old : 
+}
+                   python-keystoneclient: { new : 1:0.3.1-0ubuntu1~cloud0
+old : 
+}
+                   python-greenlet: { new : 0.4.1-0ubuntu1~cloud0
+old : 
+}
+                   python-setuptools-git: { new : 1.0b1-0ubuntu2~cloud0
+old : 
+}
+                   python2.7-iso8601: { new : 1
+old : 
+}
+                   python-urllib3: { new : 1.6-2~cloud0
+old : 
+}
+                   python-openid: { new : 2.2.5-3ubuntu1
+old : 
+}
+                   python-pastedeploy: { new : 1.5.0-2build1
+old : 
+}
+                   swift: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-prettytable: { new : 0.6.1-1ubuntu1~cloud0
+old : 
+}
+                   python2.7-swift: { new : 1
+old : 
+}
+                   python-dnspython: { new : 1.9.4-0ubuntu3
+old : 
+}
+                   swift-doc: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   python-requests: { new : 1.2.3-1~cloud0
+old : 
+}
+                   python-iso8601: { new : 0.1.4-1ubuntu1
+old : 
+}
+                   python-oslo-config: { new : 1
+old : 
+}
+                   
+----------
+    State: - file
+    Name:      /etc/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /etc/swift updated
+        Changes:   group: swift
+                   mode: 755
+                   user: swift
+                   
+----------
+    State: - file
+    Name:      /etc/swift/swift.conf
+    Function:  managed
+        Result:    True
+        Comment:   File /etc/swift/swift.conf updated
+        Changes:   diff: New file
+                   
+----------
+    State: - file
+    Name:      /var/run/swift
+    Function:  directory
+        Result:    True
+        Comment:   Directory /var/run/swift updated
+        Changes:   /var/run/swift: New Dir
+                   
+----------
+    State: - pkg
+    Name:      xfsprogs
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: xfsprogs.
+        Changes:   libreadline5: { new : 5.2-11
+old : 
+}
+                   fsck-backend: { new : 1
+old : 
+}
+                   xfsprogs: { new : 3.1.7
+old : 
+}
+                   
+----------
+    State: - loopbackdisk
+    Name:      sda
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sda.disk
+
+        Changes:   
+----------
+    State: - loopbackdisk
+    Name:      sdb
+    Function:  xfs
+        Result:    True
+        Comment:   /mnt/sdb.disk
+
+        Changes:   
+----------
+    State: - mount
+    Name:      /srv/node/sda
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - mount
+    Name:      /srv/node/sdb
+    Function:  mounted
+        Result:    True
+        Comment:   Target was successfully mounted. Added new entry to the fstab.
+        Changes:   mount: True
+                   persist: new
+                   
+----------
+    State: - pkg
+    Name:      rsyncpkgs
+    Function:  installed
+        Result:    True
+        Comment:   All specified packages are already installed.
+        Changes:   
+----------
+    State: - pkg
+    Name:      swift-account
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-account.
+        Changes:   swift-account: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-container
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-container.
+        Changes:   swift-container: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - pkg
+    Name:      swift-object
+    Function:  installed
+        Result:    True
+        Comment:   The following packages were installed/updated: swift-object.
+        Changes:   swift-object: { new : 1.9.0-0ubuntu1~cloud0
+old : 
+}
+                   
+----------
+    State: - service
+    Name:      rsync
+    Function:  running
+        Result:    True
+        Comment:   Service rsync is already enabled, and is running
+        Changes:   
+----------
+    State: - service
+    Name:      swift-ring-minion
+    Function:  running
+        Result:    True
+        Comment:   Service swift-ring-minion has been enabled, and is running
+        Changes:   swift-ring-minion: True
+                   
+
+root@admin1:~# 
+
+
+
