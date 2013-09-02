@@ -7,3 +7,5 @@ ubuntu_cloud_repo:
     - require_in:
       - swiftpkgs
       - swift-object
+      - swift-container
+      - swift-account

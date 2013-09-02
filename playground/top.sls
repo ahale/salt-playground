@@ -10,6 +10,13 @@ base:
   'storage*':
     - match: glob
     - object
+    - container
+    - account
+    - rsyncd
+    - ring-minion
   '{{ pillar['object-expirer-host'] }}':
     - match: glob
     - object-expirer
+  '{{ pillar['ring-master-host'] }}':
+    - match: glob
+    - ring-master

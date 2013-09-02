@@ -10,6 +10,12 @@ swift-object:
     - require:
       - pkgrepo: ubuntu_cloud_repo
 
+/etc/swift/object-server.conf:
+  file.managed:
+    - source: salt://etc/swift/object-server.conf
+    - mode: 644
+    - template: jinja
+
 {% for disk in pillar['loopback_devices'] -%}
 {{ disk }}:
   loopbackdisk.xfs:

@@ -14,3 +14,4 @@ corepkgs:
         - python-pip
         - parted
         - ipython
+        - python-dev
