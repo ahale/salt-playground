@@ -14,6 +14,12 @@ base:
     - account
     - rsyncd
     - ring-minion
+  'proxy*':
+    - match: glob
+    - proxy
+    - swauth
+    - sos
+    - ring-minion
   '{{ pillar['object-expirer-host'] }}':
     - match: glob
     - object-expirer

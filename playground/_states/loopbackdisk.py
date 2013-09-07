@@ -1,4 +1,3 @@
-
 import os
 import subprocess
 from subprocess import PIPE
@@ -41,7 +40,7 @@ def xfs(mount, size="1G", path="/mnt/", force=False):
             return ret
     except NameError:
         pass
-    
+
     filename = path + mount + '.disk'
     try:
         _run_cmd(['truncate', '-s', size, filename])

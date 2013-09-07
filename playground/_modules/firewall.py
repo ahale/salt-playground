@@ -5,16 +5,16 @@ def __virtual__():
     return 'firewall'
 
 
-def get_ips(iface='eth1'):
+def get_ips(iface='eth1', hostglob='*'):
     """
     Return list of all minion private ips
 
     CLI Example::
-        salt '*' firewall.get_firewall_ips
+        salt '*' firewall.get_ips
     """
     ip_list = []
     caller = salt.client.Caller()
-    ip_info = caller.function('publish.publish', '*', 'grains.item', 'ip_interfaces')
-    for host in ip_info:
-        ip_list.append(ip_info[host]['ip_interfaces'][iface][0])
+    ipinfo = caller.function('publish.publish', hostglob, 'grains.item', 'ip_interfaces')
+    for host in ipinfo:
+        ip_list.append(ipinfo[host]['ip_interfaces'][iface][0])
     return ip_list

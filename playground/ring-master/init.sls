@@ -1,6 +1,10 @@
 include:
   - ring-master.git
 
+ensure-ring:
+  swiftutils.ensure_ring:
+    - path: /etc/swift
+
 /etc/swift/ring-master.conf:
   file.managed:
     - source: salt://etc/swift/ring-master.conf
@@ -14,7 +18,6 @@ include:
     - makedirs: True
     - user: swift
     - group: swift
-
 
 /etc/init.d/swift-ring-master-server:
   file.managed:

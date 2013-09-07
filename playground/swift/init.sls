@@ -25,6 +25,13 @@ include:
     - require: 
       - pkg: swiftpkgs
 
+/var/log/swift:
+  file.directory:
+    - makedirs: True
+    - mode: 755
+    - require: 
+      - pkg: swiftpkgs
+
 swiftpkgs:
   pkg.installed:
     - require:
@@ -37,3 +44,9 @@ swiftpkgs:
         - python-swiftclient: {{ pillar['swiftclient_version'] }}
         - swift: {{ pillar['swift_version'] }}
         - swift-doc: {{ pillar['swift_version'] }}
+  pip.installed:
+    - name: dnspython
+    - options: dnspython>=1.10.0
+    - require:
+        - pkg: corepkgs
+

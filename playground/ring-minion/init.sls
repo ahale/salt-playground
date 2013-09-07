@@ -15,6 +15,7 @@ include:
     - user: root
     - group: root
     - mode: 755
+    - template: jinja
 
 swift-ring-minion:
   service:

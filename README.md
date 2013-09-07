@@ -30,6 +30,10 @@ Now deploy the firewall to each node, this is a horrible misuse of salt publish 
     root@admin1:~# salt '*' saltutil.sync_all
     root@admin1:~# salt -G 'cluster:demo' state.sls firewall
 
+Its best to ensure the ring master devices is correct in the pillar then configure the services server first since it generates rings and runs the ring-master service. This allows nodes to grab the rings as soon as they get ring-minion installed and avoid a second highstate to enable the services that would have failed due to missing rings.
+
+    root@admin1:~# salt -G 'stype:services' state.highstate
+
 Then finally deploy the cluster.
 
     root@admin1:~# salt -G 'cluster:demo' state.highstate
