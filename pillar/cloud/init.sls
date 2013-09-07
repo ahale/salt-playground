@@ -2,7 +2,7 @@ swiftdemo_zones:            4
 swiftdemo_nodes_per_zone:   1
 swiftdemo_proxies:          1
 swiftdemo_services:         1
-swiftdemo_domain:           swiftdemo.wwwdata.eu
+swiftdemo_domain:           demo
 
 loopback_storage:           True
 loopback_devices:           ['sda', 'sdb',]

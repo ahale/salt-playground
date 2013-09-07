@@ -47,6 +47,7 @@ swiftpkgs:
   pip.installed:
     - name: dnspython
     - options: dnspython>=1.10.0
+    - upgrade: True
     - require:
         - pkg: corepkgs
 

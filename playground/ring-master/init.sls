@@ -4,6 +4,7 @@ include:
 ensure-ring:
   swiftutils.ensure_ring:
     - path: /etc/swift
+    - drives: ['sda1', 'sdb1']
 
 /etc/swift/ring-master.conf:
   file.managed:

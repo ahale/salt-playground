@@ -9,6 +9,17 @@ swift-object:
     - skip_verify: True
     - require:
       - pkgrepo: ubuntu_cloud_repo
+  service:
+    - running
+    - sig: swift-object-server
+    - enable: True
+    - reload: True
+    - require:
+      - pkg: swift-object
+      - file: /etc/swift/object-server.conf
+      - service: swift-ring-minion
+    - watch:
+      - file: /etc/swift/object-server.conf
 
 /etc/swift/object-server.conf:
   file.managed:
