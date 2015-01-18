@@ -19,6 +19,8 @@ EXIT_WARNING = 1
 EXIT_ERROR = 2
 
 HAS_SWIFTUTILS = False
+__virtualname__ = 'swiftutils'
+
 try:
     import os
     import netifaces
@@ -31,16 +33,19 @@ try:
     from swift.common.utils import whataremyips as _whataremyips
     from swift.common.ring import Ring
     from swift.common.ring import RingBuilder
+    HAS_SWIFTUTILS = True
 
-    HAS_SWIFTUTILS = 'swiftutils'
 except ImportError:
     HAS_SWIFTUTILS = False
-
+import logging
 log = logging.getLogger(__name__)
 
 
 def __virtual__():
-    return HAS_SWIFTUTILS
+    if not HAS_SWIFTUTILS:
+        return False
+    else:
+        return __virtualname__
 
 
 def _in_ring(service):

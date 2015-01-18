@@ -1,8 +1,7 @@
 import salt
 
 
-def __virtual__():
-    return 'firewall'
+__virtualname__ = 'firewall'
 
 
 def get_ips(iface='eth1', hostglob='*'):
